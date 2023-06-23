@@ -1,0 +1,109 @@
+<div class="main-flex">
+  <div class="flex-left">
+    <img class="avatar" src="" alt="My Avatar">
+    <div class="link-icons">link icons</div>
+  </div>
+
+  <div class="flex-right">
+    <h2 class="greetings">Hi! Im <span class=my-name>Janelle</span>.</h2>
+    <div class="bio">
+      <p>
+        I am currently a <span class="accent">backend developer</span>; 
+        I like designing databases and backend functionalities.
+        I am also aspiring to be a fullstack developer.  
+      </p>
+
+      <br>
+
+      <p>
+        I love learning new things, and putting them into practice.
+        Currently, I am also learning about frontend development, and UI/UX design.  
+      </p>
+    </div>
+
+    <a href="/about-me">
+      <button class="about-me-button">
+        Learn more about me
+        (add icon)
+      </button>  
+    </a>
+  </div>
+</div>
+
+<!----- styling --- -->
+<style>
+
+  * {
+    color: #E1E1E1;
+  }
+
+  .main-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    height: 92vh;
+    background-image: linear-gradient(to right, #072D2D, #000000);    
+  }
+
+  .flex-left {
+    padding: 0 5% 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100%;
+  }
+
+  .avatar {
+    height: 40vh;
+    width: 40vh;
+    border-style: dashed;
+    border-color: #000000;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .link-icons {
+    padding: 5%;
+  }
+
+  .flex-right {
+    padding: 0 25% 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50vw;
+    height: 100%;
+  }
+
+  .greetings {
+    font-weight: normal;
+  }
+
+  .bio {
+    margin: 10% 0 14% 0;
+  }
+
+  .my-name {
+    color: #FFCF96;
+    font-weight: 800;
+  }
+
+  .accent {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+
+  .about-me-button {
+    padding: 13px;
+    background-color: #094848;
+  }
+  .about-me-button:hover {
+    background-color: #74a5a5;
+    color: #000000
+  }
+</style>
