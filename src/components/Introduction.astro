@@ -23,8 +23,12 @@
 
     <a href="/about-me">
       <button class="about-me-button">
-        Learn more about me
-        (add icon)
+        <div>
+          Learn more about me
+        </div>
+        <div class="arrow-right">
+          (add icon)
+        </div>
       </button>  
     </a>
   </div>
@@ -35,6 +39,7 @@
 
   * {
     color: #E1E1E1;
+    text-align: justify;
   }
 
   .main-flex {
@@ -43,7 +48,7 @@
     justify-content: center;
     align-items: center;
     margin: 0%;
-    height: 92vh;
+    height: 100vh;
     background-image: linear-gradient(to right, #072D2D, #000000);    
   }
 
@@ -82,6 +87,7 @@
 
   .greetings {
     font-weight: normal;
+    font-size: 1.5rem;
   }
 
   .bio {
@@ -91,6 +97,7 @@
   .my-name {
     color: #FFCF96;
     font-weight: 800;
+    font-size: 1.5rem;
   }
 
   .accent {
@@ -99,11 +106,18 @@
   }
 
   .about-me-button {
-    padding: 13px;
+    flex-direction: row;
+    text-align: left;
+    padding: 13px 25px;
     background-color: #094848;
   }
   .about-me-button:hover {
     background-color: #74a5a5;
+    font-size: 1rem;
     color: #000000
+  }
+
+  .arrow-right{
+    margin-left: 20px;
   }
 </style>

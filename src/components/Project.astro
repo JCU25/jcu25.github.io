@@ -40,7 +40,7 @@ const {project_name, role, time_frame, href, description, img_src} = Astro.props
     /* align-items: center; */
     text-align: justify;
     border-radius: 10px;
-    height: 150px;
+    /* height: 150px; */
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -52,6 +52,7 @@ const {project_name, role, time_frame, href, description, img_src} = Astro.props
   }
 
   .project_name {
+    font-size: 1.4rem;
     font-weight: 600;
     color: #094848
   }
@@ -93,12 +94,10 @@ const {project_name, role, time_frame, href, description, img_src} = Astro.props
 
   .image-link {
     width: 50%;
-    transition-duration: 0.2s;
   }
 
   .image-link:hover {
     transform: scale(1.15);
-    transition-duration: 0.2s;    
   }
 
   .project-image {

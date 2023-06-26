@@ -1,0 +1,37 @@
+---
+export interface props {
+  certificate_title: string,
+  date: string
+  img_src: string
+  href: string
+}
+
+const {certificate_title, date, img_src, href} = Astro.props
+---
+<a href={href}>
+  <div class="container">
+    <h1>{certificate_title}</h1>
+    <p>{date}</p>
+    <img src={img_src}>
+  </div>
+</a>
+
+
+<style>
+  a {
+    margin: 0.5% 3%;
+  }
+  
+  .container {
+    padding: 5%;
+    width: 20vw;
+    height: 30vh;
+    border-radius: 10px;
+    background-color: #e3f2f2;
+  }
+
+  .container:hover {
+    transform: scale(1.10);
+    background-color: #e3f2f2;
+  }
+</style>
