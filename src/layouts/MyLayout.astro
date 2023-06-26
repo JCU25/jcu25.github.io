@@ -19,7 +19,6 @@ const { title } = Astro.props
   <Header/>
 </head>
 <body>
-  <Introduction/>
   <slot/>
 </body>
 
@@ -40,14 +39,46 @@ const { title } = Astro.props
     font-family: 'Manrope', sans-serif;
     font-weight: normal;
     letter-spacing: 1px;
+    line-height: 25px;
+    scroll-behavior: smooth;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+    color: #1A1A1A;
   }
 
   button {
-    padding: 8px;
-    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 25px;
+    font-size: 90%;
     border: none;
+    border-radius: 10px;
+    /* height: 40px; */
   }
   button:hover {
     cursor: pointer;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #072D2D;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(129, 127, 127);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(162, 160, 160);
   }
 </style>
