@@ -1,7 +1,19 @@
 <div class="main-flex">
   <div class="flex-left">
     <img class="avatar" src="" alt="My Avatar">
-    <div class="link-icons">link icons</div>
+    <div class="icon-div">
+      <a target="_blank" href="https://linkedin.com/in/janelle-cassandra-uy">
+        <img class="icons" src="./src/assets/icons/introduction_linkedin.png" alt="">
+      </a>
+
+      <a target="_blank" href="">
+        <img class="icons" src="./src/assets/icons/introduction_email.png" alt="">
+      </a>
+      
+      <a target="_blank" href="https://github.com/JCU25">
+        <img class="icons" src="./src/assets/icons/introduction_github.png" alt="">
+      </a>
+    </div>
   </div>
 
   <div class="flex-right">
@@ -71,8 +83,16 @@
     text-align: center;
   }
 
-  .link-icons {
+  .icon-div {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
     padding: 5%;
+  }
+
+  .icons {
+    width: 40px;
   }
 
   .flex-right {
