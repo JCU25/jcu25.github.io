@@ -1,0 +1,199 @@
+---
+interface Props {
+    date: string;
+    img_src: string;
+    proj_link: string;
+    title: string;
+    role: string;
+    project_type: string;
+    description: string;
+}
+
+const {date, img_src, proj_link, title, role, project_type, description} = Astro.props;
+---
+
+<div class="highlight-container">
+
+    <div class="flex horizontal proj-info-container">
+        <div class="flex column date-img-div">
+            <p class="timeframe">{date}</p>
+            <a href={proj_link} target="_blank">
+                <img src={img_src} alt={title}>
+            </a>    
+        </div>
+
+        <div class="flex column proj-info">
+            <a href={proj_link}><h2>{title}</h2></a>
+            <div class="role">
+                <p>Role:</p>
+                <p >{role}</p>
+            </div>
+
+            <p class="proj-type">{project_type}</p>
+
+            <p class="description">{description}</p>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    h2 {
+        font-weight: 800;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+
+    div {
+        overflow: auto;
+    }
+
+
+    .horizontal
+    {
+        flex-direction: row;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .highlight-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 48px;
+        padding: 45px 35px;
+    }
+    
+    .date-img-div {
+        gap: 22px;
+
+    }
+
+    .highlight-container img {
+        width: 100%;
+    }
+
+    .timeframe {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .proj-info-container {
+        gap: 5%;
+        align-items: center;
+    }
+
+    .proj-info {
+        width: 50%;
+        gap: 24px;
+
+        p {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    .role p {
+        white-space: pre;
+        font-weight: 700;
+    }
+
+    .proj-type {
+        font-style: italic;
+    }
+
+    .description {
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 600px) {
+        h2 {
+            font-weight: 800;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+
+
+        .horizontal
+        {
+            flex-direction: column;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .highlight-container {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 48px;
+            padding: 45px 35px;
+        }
+        
+        .date-img-div {
+            gap: 22px;
+
+        }
+
+        .highlight-container img {
+            width: 100%;
+        }
+
+        .timeframe {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .proj-info-container {
+            gap: 5%;
+            align-items: center;
+        }
+
+        .proj-info {
+            width: 50%;
+            gap: 24px;
+
+            p {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+
+        .role p {
+            white-space: pre;
+            font-weight: 700;
+        }
+
+        .proj-type {
+            font-style: italic;
+        }
+
+        .description {
+            font-weight: 600;
+        }
+    }
+
+</style>

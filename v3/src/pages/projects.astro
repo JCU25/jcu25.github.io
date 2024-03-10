@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro'
+---
+
+<Layout title="Janelle's Projects">
+    <h1>MY PROJECTS</h1>
+    
+    <div class="flex main-category-outline-container">
+        <div class="flex category-outline-conteiner">
+            <a href="" class="category-outline">MACHINE LEARNING</a>
+            <a href="" class="category-outline">SOFTWARE DEVELOPMENT</a>
+            <a href="" class="category-outline">WEB DEVELOPMENT</a>
+
+        </div>
+
+        <div class="flex category-outline-conteiner">
+            <a href="" class="category-outline">DATABASE MANAGEMENT</a>
+            <a href="" class="category-outline">MOBILE DEVELOPMENT</a>
+        </div>
+    </div>
+
+
+    <div class="projects">
+
+        <ProjectCard
+            img_src='./assets/ocp-website.png'
+            project_name='MMCM OCP Website'
+            project_link='https://www.mmcm-ocp.com'
+            project_types={[{type: "Web Development", className: "web-dev"}, {type: "Machine Learning", className: "machine-learning"}]}
+            roles={[
+                "Database Manager & Engineer (June 2022-2024)", 
+                "Backend Developer  (March 2022-2024)", 
+                "Backend Lead (June 2022-2024)"]}
+            description='This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships.'
+            tools = "NodeJS, ReactJS, REST API"
+        ></ProjectCard>
+
+        <ProjectCard
+            img_src='./assets/ecd-dsa.png'
+            project_name='ECD-DSA: Estimating Crowd Density to Detect Sparse Areas'
+            project_link=''
+            project_types={[{type: "Software Development", className: "software-dev"}, {type: "Machine Learning", className: "machine-learning"}]}
+            roles={[
+                "Software Developer  (Oct 2023 - Feb 2024)", 
+                "Model Training (Nov 2023 - Jan 2024)"
+            ]}
+            description='This is an undergraduate thesis project created to help monitor crowd density and detect sparse areas from connected cameras; and generate alerts for rising crowd density, and overcrowding. Alerts generated are forwarded to other computers to alert other officers.'
+            tools = "Python, YOLOv8, Render"
+        ></ProjectCard>
+
+        <ProjectCard
+            img_src='./assets/ccis-website.png'
+            project_name='UtilityCrate'
+            project_link=''
+            project_types={[{type: "Software Development", className: "software-dev"}, {type: "Machine Learning", className: "machine-learning"}]}
+            roles={[
+                "Backend Developer (Nov 2023- Jan 2024)", "Model Trainer (Nov 2023 - Jan 2024)"
+            ]}
+            description='This is an academic project made for the completion of our Software Engineering course. This is a scheduling application in which you may add notes, and tasks either for individual or organizational use.'
+            tools = "NodeJS, Flutter, Render, Rest API"
+        ></ProjectCard>
+        
+        <ProjectCard
+            img_src='./assets/ccis-website.png'
+            project_name='MMCM CCIS Website'
+            project_link=''
+            project_types={[{type: "Web Development", className: "web-dev"}]}
+            roles={[
+                "Backend Developer (Jul 2021 - Aug 2021)"
+            ]}
+            description='This is a voluntary project we made for the Mapua Malayan Colleges Mindanao (MMCM) Computing Students Society (CSS) to allow students to post their projects, and to get updates on school events.'
+            tools = "NodeJS, ReactJS, REST API"
+        ></ProjectCard>
+        
+        <ProjectCard
+            img_src='./assets/proj-discord-icon.png'
+            project_name='MMCM CCIS Discord Bot'
+            project_link=''
+            project_types={[{type: "Discord Bot", className: "discord-bot"}]}
+            roles={[
+                "Lead Developer (June 2022)"
+            ]}
+            description='This discord bot was made to verify the enrollment status of students, and to assign roles and permissions to each student in the discord server of Mapua Malayan Colleges Mindanao, College of Computer and Information Science (CCIS).'
+            tools = "NodeJS, MongoDB, Discord"
+        ></ProjectCard>
+        
+        <ProjectCard
+            img_src='./assets/proj-discord-icon.png'
+            project_name='MMCM CCIS Discord Bot'
+            project_link=''
+            project_types={[{type: "Discord Bot", className: "discord-bot"}]}
+            roles={[
+                "Lead Developer (March 2022)"
+            ]}
+            description='This discord bot was made to verify,  register, and assign roles to participants of the Mobile Legends competition during the 2022 MCM Cup.'
+            tools = "NodeJS, MongoDB, Discord"
+        ></ProjectCard>
+        
+        <ProjectCard
+            img_src='./assets/proj-machine-learning-icon.png'
+            project_name='Face Mask Detection'
+            project_link=''
+            project_types={[{type: "Machine Learning", className: "machine-learning"}]}
+            roles={[
+                "Model Trainer <DATE>"
+            ]}
+            description='This machine learning model was trained using YOLOv8 using the __ dataset.This project was made in fulfillment of our machine learning course.'
+            tools = "Python, YOLOv8"
+        ></ProjectCard>
+
+        
+        <ProjectCard
+            img_src='./assets/proj-machine-learning-icon.png'
+            project_name='Waste Classifier'
+            project_link=''
+            project_types={[{type: "Machine Learning", className: "machine-learning"}]}
+            roles={[
+                "Model Trainer <DATE>"
+            ]}
+            description='This machine learning model was trained using YOLOv8 using the __ dataset.This project was made in fulfillment of our machine learning course.'
+            tools = "Python, YOLOv8"
+        ></ProjectCard>
+    </div>
+</Layout>
+
+
+<style>
+    h1 {
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+        margin: 50px 0 30px 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .main-category-outline-container {
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .category-outline-conteiner {
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .projects {
+        margin: 40px 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 1200px) {
+        h1 {
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+            margin: 50px 0 30px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .main-category-outline-container {
+            gap: 15px;
+        }
+
+        .category-outline-conteiner {
+            gap: 50px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .main-category-outline-container {
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .category-outline-conteiner {
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+    }
+
+    @media screen and (max-width: 630px) {
+        .projects {
+            margin: 40px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin: 40px 0 25px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .main-category-outline-container {
+            gap: 5px;
+            font-size: 12px;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: row; */
+        }
+
+        .category-outline-conteiner {
+            gap: 10px;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+</style>

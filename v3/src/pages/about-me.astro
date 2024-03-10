@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+
+<Layout title="About Me">
+
+
+    <section>
+
+        <h1>
+            <span class="separator header-accent">learn more</span>
+            <br>
+            <span class="separator">ABOUT ME</span>
+        </h1>
+    
+        <div class="details">
+    
+            <p>
+                Hi! I am <span class="accent-color">Janelle</span>, and I specialize in BACKEND web and software DEVELOPMENT. I aspire to be a full-stack developer.
+            </p>
+        
+            <p>Despite that, I also love learning about: robotics, and UI/UX design.</p>
+        
+        
+            <p>I love playing the piano and I’m a classical pianist. I was taking piano lessons since I was 7 years old up to when I was 18 years (it was stopped because of the pandemic). I plan to get back to it though!</p>
+        
+            <p>I also love reading webtoons, manhua, manhwa. In fact, I spend most of my free time reading them. I was in a reading slump for physical books and am currently getting back to it! One of my favorite webtoons is The Remarried Empress, the plot is so good! I also love reading classical books, and I’m currently rereading Dracula by Bram Stoker!</p>
+        
+            <p> I also love <span class="accent-color">art</span> and <span class="accent-color">video games</span>! ❤ </p>
+    
+        </div>
+    </section>
+</Layout>
+
+
+
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Qwitcher+Grypen:wght@400;700&'); */
+
+    h1 {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .separator {
+        font-size: 60px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+
+    }
+
+    .header-accent {
+        font-family: "Qwitcher Grypen", cursive;
+        margin-left: -20%;
+    }
+
+
+    p {
+        font-size: 27px;
+        color: #000000;
+        font-weight: 400;
+        font-family: "Manrope", sans-serif;
+
+        margin-top: 6%;
+    }
+
+    section {
+        margin: 0 15%;
+    }
+
+    .accent-color {
+        color: #90420A;
+    }
+
+    .accent-text {
+        
+    }
+
+
+    /* FOR MOBILE VIEW */
+    @media screen and (max-width: 1200px) {
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .separator {
+            font-size: 45px;
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+
+        }
+        .header-accent {
+            font-family: "Qwitcher Grypen", cursive;
+            margin-left: -30%;
+        }
+
+
+        p {
+            font-size: 18px;
+            color: #000000;
+            font-weight: 400;
+            font-family: "Manrope", sans-serif;
+            margin-top: 5%;
+        }
+
+        section {
+            margin: 0 15%;
+        }
+
+        .accent-color {
+            color: #90420A;
+        }
+
+        .accent-text {
+            
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .separator {
+            font-size: 40px;
+            /* color: aqua; */
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+
+        }
+        .header-accent {
+            font-family: "Qwitcher Grypen", cursive;
+            margin-left: -70%;
+        }
+
+
+        p {
+            font-size: 18px;
+            color: #000000;
+            font-weight: 400;
+            font-family: "Manrope", sans-serif;
+            margin-top: 15%;
+        }
+
+        section {
+            margin: 0 15%;
+        }
+
+        .accent-color {
+            color: #90420A;
+        }
+
+        .accent-text {
+            
+        }
+    }
+
+</style>

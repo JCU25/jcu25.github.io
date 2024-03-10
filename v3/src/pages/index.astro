@@ -1,0 +1,381 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectHighlightLeftImg from '../components/ProjectHighlightLeftImg.astro';
+import ProjectHighlightRightImg from '../components/ProjectHighlightRightImg.astro';
+---
+
+<Layout title="Janelle Uy">
+	<section class="hero">
+		<div class="flex-center">
+
+			<div class="intro-info">
+				<p class="name">Hello I'm Janelle</p>
+				<p class="specialty rajdhani-medium">Backend Developer</p>
+	
+				<div class="skills rajdhani-medium">
+					<p>Database Design</p>
+					<p>|</p>
+	
+					<p>API</p>
+					<p>|</p>
+	
+					<p>Discord Bots</p>
+					<p>|</p>
+	
+					<p>Database Management</p>
+					<p>|</p>
+	
+					<p>NodeJS</p>
+					<p>|</p>
+	
+					<p>Dart</p>
+					<p>|</p>
+	
+					<p>MySQL</p>
+					<p>|</p>
+	
+					<p>JavaScript</p>
+					<p>|</p>
+	
+					<p>Flutter</p>
+					<p>|</p>
+	
+					<p>Python</p>
+				</div>
+	
+				<div class="more-info-div">
+					<p class="what-i-do">I make systems to help <span class="accent">automate your</span> manually tedious <span class="accent">tasks</span>!</p>
+					<p class="what-i-do">I am a back-end developer, and I love LEARNING. I am currently learning UI/UX design as well to add to my skill set.</p>			
+					<p class="what-i-do"><a class="more-about-me" href="/about-me">More about me</a></p>	
+				</div>
+				
+				
+				<a class="button" href="mailto:jcuy@mcm.edu.ph">Contact Me</a>
+			</div>
+
+			
+			<!-- <img src="./assets/hero_proj_highlight.png" alt="Project Highlights" width="705px" height="480px"> -->
+			<img src="./assets/hero_proj_highlight.png" alt="Project Highlights">
+		</div>
+	</section>
+
+
+	<section class="highlights">
+		<div class="flex-center">
+
+		</div>
+			<div class="highlights-separator">
+				<h1 class="sep1">PROJECT</h1>
+				<h3 class="sep2">highlights</h3>
+			</div>
+
+
+			<div class="proj-container">
+				<ProjectHighlightLeftImg
+					date="Mar 2022 - Present"
+					img_src = "./assets/ocp-website.png"
+					proj_link='https://mmcm-ocp.com'
+					title="OCP Website"
+					role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
+					project_type="Web Development"
+					description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships."
+				></ProjectHighlightLeftImg>
+
+				<ProjectHighlightRightImg
+				date="Mar 2022 - Present"
+				img_src = "./assets/ocp-website.png"
+				proj_link='https://mmcm-ocp.com'
+				title="OCP Website"
+				role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
+				project_type="Web Development"
+				description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships."
+				>
+				</ProjectHighlightRightImg>
+
+				<ProjectHighlightLeftImg
+					date="Mar 2022 - Present"
+					img_src = "./assets/ocp-website.png"
+					proj_link='https://mmcm-ocp.com'
+					title="OCP Website"
+					role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
+					project_type="Web Development"
+					description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships."
+				></ProjectHighlightLeftImg>
+			
+			</div>
+
+		<a class="project-button" href="/projects">View All Projects</a>
+
+
+	</section>
+</Layout>
+
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+	.rajdhani-medium {
+		font-family: "Rajdhani", sans-serif;
+		font-weight: 500;
+		font-style: normal;
+	}
+
+
+	p {
+		margin: 0;
+	}
+
+
+	.hero {
+		margin-top: 5%;
+		width: 99vw;
+		height: 65vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero img {
+		margin-top: 7%;
+		width:45%;
+		height: 55%;
+	}
+
+	.flex-center {
+		width: 75vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 56px;
+	}
+
+	.intro-info {
+		width: 30vw;
+	}
+
+	.name {
+		font-family: "Raleway", sans-serif;
+		/* font-size: 59px; */
+		font-size: 3.67em;
+	}
+
+	.specialty {
+		font-size: 1.25em;
+		margin-top: 2%;
+	}
+
+	.skills {
+		margin-top: 10%;
+		/* width: 470px; */
+		width: 100%;
+		font-size: 1.25em;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		column-gap: 5%;
+	}
+
+	.more-info-div {
+		margin-top: 10%;
+		margin-bottom: 10%;
+	}
+
+	.what-i-do {
+		margin-top: 5%;
+		font-family: "Manrope", sans-serif;
+		font-size: 1.25em;
+		white-space: break-spaces;
+	}
+
+	.more-about-me {
+		font-family: "Manrope", sans-serif;
+		font-weight: 600;
+		color: #0F6572;
+		text-decoration: none;
+	}
+	.more-about-me:hover {
+		font-weight: 800;
+		text-decoration: underline;
+	}
+
+	.button {
+		margin-top: 10%;
+		color: #FFFFFF;
+		font-family: "Raleway", sans-serif;
+		font-weight: 600;
+		background-color: #90420A;
+		padding: 10px;
+		border-radius: 10px;
+
+		text-decoration: none;
+	}
+
+	.button:hover {
+		background-color: #623717;
+	}
+
+	.accent {
+		font-weight: 800;
+	}
+
+
+
+
+	.highlights {
+		width: 99vw;
+		height: 100vh;
+		padding: 7%;
+		box-sizing: border-box;
+	}
+
+	.highlights-separator {
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+		
+	}
+	.sep1 {
+		/* font-size: 90px; */
+		font-size: 3.5vw;
+		font-weight: 400;
+	}
+	.sep2{
+		margin-left: 20%;
+		/* font-size: 46px; */
+		font-size: 2.86em;
+		font-weight: 400;
+	}
+
+	.project-button {
+
+	}
+
+	@media screen and (max-width:600px) {
+		p {
+			margin: 0;
+		}
+
+
+		.hero {
+			margin-top: 5%;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.hero img {
+			margin-top: 7%;
+			width:45%;
+			height: 55%;
+		}
+
+		.flex-center {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			/* gap: 56px; */
+		}
+
+		.intro-info {
+			width: 99vw;
+		}
+
+		.name {
+			font-family: "Raleway", sans-serif;
+			/* font-size: 59px; */
+			font-size: 30px;
+		}
+
+		.specialty {
+			font-size: 18px;
+			margin-top: 2%;
+		}
+
+		.skills {
+			margin-top: 10%;
+			width:85%;
+			font-size: 15px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 2%;
+		}
+
+		.more-info-div {
+			/* margin-top: 10%;
+			margin-bottom: 10%; */
+		}
+
+		.what-i-do {
+			/* margin-top: 5%; */
+			font-family: "Manrope", sans-serif;
+			font-size: 15px;
+			white-space: break-spaces;
+		}
+
+		.more-about-me {
+			font-family: "Manrope", sans-serif;
+			font-weight: 600;
+			color: #0F6572;
+			text-decoration: none;
+		}
+		.more-about-me:hover {
+			font-weight: 800;
+			text-decoration: underline;
+		}
+
+		.button {
+			margin-top: 10%;
+			color: #FFFFFF;
+			font-family: "Raleway", sans-serif;
+			font-weight: 600;
+			background-color: #90420A;
+			padding: 10px;
+			border-radius: 10px;
+
+			text-decoration: none;
+		}
+
+		.button:hover {
+			background-color: #623717;
+		}
+
+		.accent {
+			font-weight: 800;
+		}
+
+
+
+
+		.highlights {
+			width: 99vw;
+			/* height: 100vh; */
+			padding: 7%;
+			box-sizing: border-box;
+		}
+
+		.highlights-separator {
+			display: flex;
+			flex-direction: column;
+			/* justify-content: center; */
+			align-items: center;
+			
+		}
+		.sep1 {
+			/* font-size: 90px; */
+			font-size: 40px;
+			font-weight: 400;
+		}
+		.sep2{
+			margin-left: 20%;
+			font-size: 25px;
+			font-weight: 400;
+		}
+
+		.project-button {
+
+		}
+	}
+</style>
