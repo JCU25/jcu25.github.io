@@ -31,7 +31,7 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
 
         <div class="flex column date-img-div">
             <p class="timeframe">{date}</p>
-            <a href={proj_link} target="_blank">
+            <a class="img-link" href={proj_link} target="_blank">
                 <img src={img_src} alt={title}>
             </a>    
         </div>
@@ -85,7 +85,8 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
 
     .timeframe {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 22px;
+        margin-bottom: 30px;
     }
 
     .proj-info-container {
@@ -119,11 +120,11 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
         font-weight: 600;
     }
 
-    @media screen (max-width:600px) {
+    @media screen and (max-width:1200px) {
         
     .horizontal
     {
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 
     .column {
@@ -137,45 +138,66 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
     .highlight-container {
         display: flex;
         flex-direction: column;
-        margin: 10px 48px;
-        padding: 45px 35px;
+        /* justify-content: center;
+        align-items: center; */
+        /* margin: 10px 48px;
+        padding: 45px 25px; */
+        margin: 0; 
+        padding: 0;
     }
     
     .date-img-div {
-        gap: 22px;
-
+        gap: 15px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
     }
 
+    .img-link {
+        display: flex;
+        align-items: center;
+    }
     .highlight-container img {
-        width: 100%;
+        width: 70%;
+        margin: 0 auto;
     }
 
     .timeframe {
+        width: 80%;
+        text-align: left;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .proj-info-container {
         gap: 5%;
-        align-items: center;
+        align-self: center;
+        justify-self: center;
+        margin: 50px 0;
+        width: 95%;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+        border-radius: 20px;
+        padding: 20px 0;
     }
 
     .proj-info {
-        width: 50%;
+        margin-top: 10px;
+        width: 80%;
         gap: 24px;
 
         p {
-            font-size: 20px;
+            font-size: 15px;
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 20px;
         }
     }
 
     .role p {
         white-space: pre;
         font-weight: 700;
+        word-wrap: wrap;
     }
 
     .proj-type {
