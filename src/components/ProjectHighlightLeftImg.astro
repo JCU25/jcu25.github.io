@@ -68,9 +68,9 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
 
     .highlight-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin: 10px 48px;
-        padding: 45px 35px;
+        /* padding: 45px 35px; */
     }
     
     .date-img-div {
@@ -80,35 +80,39 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
 
     .highlight-container img {
         width: 100%;
+        margin: auto;
     }
 
     .timeframe {
         font-weight: 700;
-        font-size: 22px;
-        margin-bottom: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
     .proj-info-container {
         gap: 5%;
         align-items: center;
+        margin: 20px 0;
     }
 
     .proj-info {
-        width: 50%;
-        gap: 24px;
+        width: 100%;
+        gap: 20px;
 
         p {
-            font-size: 20px;
+            font-size: 15px;
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 22px;
         }
     }
 
     .role p {
         white-space: pre;
         font-weight: 700;
+        font-size: 15px;
+        text-wrap: wrap;
     }
 
     .proj-type {
@@ -119,7 +123,7 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
         font-weight: 600;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
         h2 {
             font-weight: 800;
         }
