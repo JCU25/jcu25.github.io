@@ -1,22 +1,26 @@
 ---
 interface Props {
+    id: string,
     img_src: string,
     project_name: string,
     project_link:string,
     project_types: {type:string, className:string}[],
     roles: string[],
+    contributions: string[],
     timeline: string,
     description: string,
     tools: string
 }
 
 const {
+    id,
     img_src, 
     project_name, 
     project_link,
     project_types,
     timeline,
     roles, 
+    contributions,
     description,
     tools
 } = Astro.props;
@@ -25,55 +29,111 @@ const {
 
 <!-- <a href={project_link}> -->
 
-    <div class="card">
-        {
-            (img_src === "/assets/proj-discord-icon.png" && <a class="discord-img" href={project_link}><img src={img_src} alt={project_name} class="discord-img"></a>)
-        }
-        {
-            (img_src === "/assets/proj-machine-learning-icon.png" &&  <a class="machine-learning-img" href={project_link}><img src={img_src} alt={project_name} class="machine-learning-img"></a>)
-        }
-        {
-            ((img_src !== "/assets/proj-discord-icon.png" && img_src !== "/assets/proj-machine-learning-icon.png") &&  <a href={project_link}><img src={img_src} alt={project_name} class="proj-img"></a>)            
-        }
+    <button onclick={`openModal('${id}')`}>
+        <div class="card">
+            {
+                (img_src === "/assets/proj-discord-icon.png" && <a class="discord-img" href={project_link}><img src={img_src} alt={project_name} class="discord-img"></a>)
+            }
+            {
+                (img_src === "/assets/proj-machine-learning-icon.png" &&  <a class="machine-learning-img" href={project_link}><img src={img_src} alt={project_name} class="machine-learning-img"></a>)
+            }
+            {
+                ((img_src !== "/assets/proj-discord-icon.png" && img_src !== "/assets/proj-machine-learning-icon.png") &&  <a href={project_link}><img src={img_src} alt={project_name} class="proj-img"></a>)            
+            }
+            
         
-    
-        {/* <div class="info-div"> */}
-            <a href={project_link}><header class="project-name">{project_name}</header></a>
-    
-            <div class="project-type-div">
+            {/* <div class="info-div"> */}
                 {
-                    project_types.map((project_type) => {
-                        return <p class={project_type.className}>{project_type.type}</p>
-                    })
+                    (project_link != "") ? <a href={project_link}><header class="project-name">{project_name}</header></a> : <a><header class="project-name">{project_name}</header></a>
                 }
-            </div>
-
-            <div class="timeline">
-                <p>{timeline}</p>
-            </div>
-    
-            {/* <div  class="role-div">
-                <p class="role-label"><b>Role:</b></p>
-                <ul class="roles-list">
+                
+        
+                <div class="project-type-div">
                     {
-                        roles.map((role) => {
-                            return <li class="role">{role}</li>
+                        project_types.map((project_type) => {
+                            return <p class={project_type.className}>{project_type.type}</p>
                         })
                     }
-                </ul>
-            </div>
+                </div>
     
-            <div>
-                <p class="description">{description}</p>
-                <p class="tools"> <b>Tools:</b> {tools}</p>
+                <div class="timeline">
+                    <p>{timeline}</p>
+                </div>
+        
+
+    </button>
+
+<div id={id} class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick={`closeModal('${id}')`}>&times;</button>
+            {id}  
+                <div  class="role-div">
+                    <p class="role-label"><b>Role:</b></p>
+                    <ul class="roles-list">
+                        {
+                            roles.map((role) => {
+                                return <li class="role">{role}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+        
+                <div>
+                    <p class="description">{description}</p>
+                    <p class="tools"> <b>Tools:</b> {tools}</p>
+                </div>
             </div>
         </div>
-    </div> */}
+    </div>
+</div>
 
-
-
+<script type="text/javascript" src="/js/modal.js"></script>
 
 <style>
+    button {
+        border: none;
+        background-color: #ffffff;
+    }
+
+    button:hover {
+        background-color: #F2F2F2;
+
+    }
+    .modal {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: 10%;
+        background-color: rgba(0,0,0,0.4);
+        display: none;
+    }
+
+    .modal-content {
+        display: block;
+        margin: 2% auto;
+        position: fixed;
+        width: 60vw;
+        height: 80vh;
+        background-color: #ffffff;
+    }
+
+    .modal-close {
+        color: #000000;
+        padding: 15px;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
 
     
     a {
@@ -92,10 +152,6 @@ const {
         gap: 20px;
         font-size: 13px;
         overflow: auto;
-    }
-
-    .card:hover {
-        background-color: #F2F2F2;
     }
 
     .proj-img {
