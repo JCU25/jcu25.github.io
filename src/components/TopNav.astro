@@ -1,148 +1,149 @@
-
 <div>
-    <nav>
-        <a id="home" href="/">Home</a>
-        <a id="projets" href="/projectsv2">My Projects</a>
-        <a id="about-me" href="/about-me">About Me</a>
-    </nav>
+  <nav>
+    <a id="home" href="/">Home</a>
+    <a id="projets" href="/projectsv2">My Projects</a>
+    <a id="about-me" href="/about-me">About Me</a>
+  </nav>
 </div>
 
-
 <script>
-    const home : HTMLElement|null = document.getElementById("home")
-    const projects : HTMLElement|null = document.getElementById("projets")
-    const about_me : HTMLElement|null = document.getElementById("about-me")
+  const home: HTMLElement | null = document.getElementById("home");
+  const projects: HTMLElement | null = document.getElementById("projets");
+  const about_me: HTMLElement | null = document.getElementById("about-me");
 
-    console.log(window.location.pathname)
+  console.log(window.location.pathname);
 
-    // text decoration when "Home" is selected
-    if (window.location.pathname == '/') {
-        if (home) {home.style.textDecoration = "underline";}
+  // text decoration when "Home" is selected
+  if (window.location.pathname == "/") {
+    if (home) {
+      home.style.textDecoration = "underline";
     }
+  }
 
-    // text decoration when "Projects" is selected
-    if (window.location.pathname == '/projectsv2' || window.location.pathname == '/projects/') {
-        if (projects) {projects.style.textDecoration = "underline";}
+  // text decoration when "Projects" is selected
+  if (
+    window.location.pathname == "/projectsv2" ||
+    window.location.pathname == "/projectsv2/" ||
+    window.location.pathname == "/projects" ||
+    window.location.pathname == "/projects/"
+  ) {
+    if (projects) {
+      projects.style.textDecoration = "underline";
     }
+  }
 
-    // text decoration when "About Me" is selected
-    if (window.location.pathname == '/about-me' || window.location.pathname == '/about-me/') {
-        if (about_me) {about_me.style.textDecoration = "underline";}
+  // text decoration when "About Me" is selected
+  if (
+    window.location.pathname == "/about-me" ||
+    window.location.pathname == "/about-me/"
+  ) {
+    if (about_me) {
+      about_me.style.textDecoration = "underline";
     }
-
+  }
 </script>
 
-
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+  div {
+    margin: 0;
+    background-color: #ffffff;
+    width: 99vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    position: fixed;
+    top: 0;
+  }
+
+  nav {
+    width: 40%;
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1200px) {
     div {
-        margin: 0;
-        background-color: #FFFFFF;
-        width: 99vw;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: fixed;
-        top: 0;
+      margin: 0;
+      background-color: #ffffff;
+      width: 100vw;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     nav {
-        width: 40%;
-        background-color: #FFFFFF;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+      width: 60%;
+      background-color: #ffffff;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
-
     a {
-        text-decoration: none;
-        color: #000000;
-        font-size: 18px;
-        font-family: "Raleway", sans-serif;    
-        font-weight: 600;
+      text-decoration: none;
+      color: #000000;
+      font-size: 15px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
     }
 
     a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    div {
+      margin: 0;
+      background-color: #ffffff;
+      width: 100vw;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-
-    @media screen and (max-width:1200px) {
-        div {
-            margin: 0;
-            background-color: #FFFFFF;
-            width: 100vw;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        nav {
-            width: 60%;
-            background-color: #FFFFFF;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        a {
-            text-decoration: none;
-            color: #000000;
-            font-size: 15px;
-            font-family: "Raleway", sans-serif;    
-            font-weight: 600;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    
+    nav {
+      width: 90vw;
+      background-color: #ffffff;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    @media screen and (max-width: 600px) {
-          
-        div {
-            margin: 0;
-            background-color: #FFFFFF;
-            width: 100vw;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        nav {
-            width: 90vw;
-            background-color: #FFFFFF;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        a {
-            text-decoration: none;
-            color: #000000;
-            font-size: 15px;
-            font-family: "Raleway", sans-serif;    
-            font-weight: 600;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    
+    a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 15px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 </style>

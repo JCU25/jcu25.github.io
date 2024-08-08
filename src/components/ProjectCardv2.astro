@@ -1,289 +1,298 @@
 ---
 interface Props {
-    id: string,
-    img_src: string,
-    project_name: string,
-    project_link:string,
-    project_types: {type:string, className:string}[],
-    roles: string[],
-    contributions: string[],
-    timeline: string,
-    description: string,
-    tools: string
+  id: string;
+  img_src: string;
+  project_name: string;
+  project_link: string;
+  project_types: { type: string; className: string }[];
+  roles: string[];
+  contributions: string[];
+  timeline: string;
+  description: string;
+  tools: string;
 }
 
 const {
-    id,
-    img_src, 
-    project_name, 
-    project_link,
-    project_types,
-    timeline,
-    roles, 
-    contributions,
-    description,
-    tools
+  id,
+  img_src,
+  project_name,
+  project_link,
+  project_types,
+  timeline,
+  roles,
+  contributions,
+  description,
+  tools,
 } = Astro.props;
 ---
 
-
 <!-- <a href={project_link}> -->
+<button onclick={`openModal('${id}')`}>
+  <div class="card">
+    {
+      img_src === "/assets/proj-discord-icon.png" && (
+        <a class="discord-img" href={project_link}>
+          <img src={img_src} alt={project_name} class="discord-img" />
+        </a>
+      )
+    }
+    {
+      img_src === "/assets/proj-machine-learning-icon.png" && (
+        <a class="machine-learning-img" href={project_link}>
+          <img src={img_src} alt={project_name} class="machine-learning-img" />
+        </a>
+      )
+    }
+    {
+      img_src !== "/assets/proj-discord-icon.png" &&
+        img_src !== "/assets/proj-machine-learning-icon.png" && (
+          <a href={project_link}>
+            <img src={img_src} alt={project_name} class="proj-img" />
+          </a>
+        )
+    }
 
-    <button onclick={`openModal('${id}')`}>
-        <div class="card">
-            {
-                (img_src === "/assets/proj-discord-icon.png" && <a class="discord-img" href={project_link}><img src={img_src} alt={project_name} class="discord-img"></a>)
-            }
-            {
-                (img_src === "/assets/proj-machine-learning-icon.png" &&  <a class="machine-learning-img" href={project_link}><img src={img_src} alt={project_name} class="machine-learning-img"></a>)
-            }
-            {
-                ((img_src !== "/assets/proj-discord-icon.png" && img_src !== "/assets/proj-machine-learning-icon.png") &&  <a href={project_link}><img src={img_src} alt={project_name} class="proj-img"></a>)            
-            }
-            
-        
-            {/* <div class="info-div"> */}
-                {
-                    (project_link != "") ? <a href={project_link}><header class="project-name">{project_name}</header></a> : <a><header class="project-name">{project_name}</header></a>
-                }
-                
-        
-                <div class="project-type-div">
-                    {
-                        project_types.map((project_type) => {
-                            return <p class={project_type.className}>{project_type.type}</p>
-                        })
-                    }
-                </div>
-    
-                <div class="timeline">
-                    <p>{timeline}</p>
-                </div>
-        
+    {/* <div class="info-div"> */}
+    {
+      project_link != "" ? (
+        <a href={project_link}>
+          <header class="project-name">{project_name}</header>
+        </a>
+      ) : (
+        <a>
+          <header class="project-name">{project_name}</header>
+        </a>
+      )
+    }
 
-    </button>
+    <div class="project-type-div">
+      {
+        project_types.map((project_type) => {
+          return <p class={project_type.className}>{project_type.type}</p>;
+        })
+      }
+    </div>
+
+    <div class="timeline">
+      <p>{timeline}</p>
+    </div>
+  </div>
+</button>
 
 <div id={id} class="modal">
-    <div class="modal-content">
-        <button class="modal-close" onclick={`closeModal('${id}')`}>&times;</button>
-            {id}  
-                <div  class="role-div">
-                    <p class="role-label"><b>Role:</b></p>
-                    <ul class="roles-list">
-                        {
-                            roles.map((role) => {
-                                return <li class="role">{role}</li>
-                            })
-                        }
-                    </ul>
-                </div>
-        
-                <div>
-                    <p class="description">{description}</p>
-                    <p class="tools"> <b>Tools:</b> {tools}</p>
-                </div>
-            </div>
-        </div>
+  <div class="modal-content">
+    <button class="modal-close" onclick={`closeModal('${id}')`}>&times;</button>
+    {id}
+    <div class="role-div">
+      <p class="role-label"><b>Role:</b></p>
+      <ul class="roles-list">
+        {
+          roles.map((role) => {
+            return <li class="role">{role}</li>;
+          })
+        }
+      </ul>
     </div>
+
+    <div>
+      <p class="description">{description}</p>
+      <p class="tools"><b>Tools:</b> {tools}</p>
+    </div>
+  </div>
 </div>
 
-<script type="text/javascript" src="/js/modal.js"></script>
+<script src="../../public/js/modal.js"></script>
 
 <style>
-    button {
-        border: none;
-        background-color: #ffffff;
-    }
+  button {
+    border: none;
+    background-color: #ffffff;
+  }
 
-    button:hover {
-        background-color: #F2F2F2;
+  button:hover {
+    background-color: #f2f2f2;
+  }
+  .modal {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 10%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+  }
 
-    }
-    .modal {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        top: 10%;
-        background-color: rgba(0,0,0,0.4);
-        display: none;
-    }
+  .modal-content {
+    display: block;
+    margin: 2% auto;
+    width: 60vw;
+    height: 80vh;
+    background-color: #ffffff;
+  }
 
-    .modal-content {
-        display: block;
-        margin: 2% auto;
-        position: fixed;
-        width: 60vw;
-        height: 80vh;
-        background-color: #ffffff;
-    }
+  .modal-close {
+    color: #000000;
+    padding: 15px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 
-    .modal-close {
-        color: #000000;
-        padding: 15px;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
 
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 560px;
+    border: 1px solid #979797;
+    border-radius: 20px;
+    padding: 30px 20px;
+    gap: 20px;
+    font-size: 13px;
+    overflow: auto;
+  }
 
-    
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
+  .proj-img {
+    width: 100%;
+    height: 264px;
+    border-radius: 10px;
+  }
 
+  .discord-img {
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .machine-learning-img {
+    height: 200px;
+    margin: 10px auto;
+  }
+
+  .info-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-div a:hover {
+    color: #145ac3;
+  }
+
+  .project-name {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .timeline {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .project-type-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .web-dev {
+    border: 1px solid #c42096;
+    color: #c42096;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+
+  .web-dev:hover {
+    background-color: #c42096;
+    color: #ffffff;
+  }
+
+  .software-dev {
+    border: 1px solid #145ac3;
+    color: #145ac3;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  .software-dev:hover {
+    background-color: #145ac3;
+    color: #ffffff;
+  }
+
+  .machine-learning {
+    border: 1px solid #da3e1b;
+    color: #da3e1b;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+
+  .machine-learning:hover {
+    background-color: #da3e1b;
+    color: #ffffff;
+  }
+
+  .discord-bot {
+    border: 1px solid #4727c6;
+    color: #4727c6;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+
+  .discord-bot:hover {
+    background-color: #4727c6;
+    color: #ffffff;
+  }
+
+  .role-div {
+    margin: 10px 0;
+  }
+
+  .role {
+    margin-left: 30px;
+  }
+
+  .role-label {
+    margin: 10px 0;
+  }
+
+  .description {
+    /* font-size: 13px; */
+  }
+
+  .tools {
+    margin: 10px 0;
+  }
+
+  @media screen and (max-width: 630px) {
     .card {
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        height: 560px;
-        border: 1px solid #979797;
-        border-radius: 20px;
-        padding: 30px 20px;
-        gap: 20px;
-        font-size: 13px;
-        overflow: auto;
-    }
-
-    .proj-img {
-        width: 100%;
-        height: 264px;
-        border-radius: 10px;
-    }
-
-    .discord-img {
-        height: 200px;
-        margin: 10px auto; 
-    }
-
-    .machine-learning-img {
-        height: 200px;
-        margin: 10px auto;
-    }
-
-    .info-div {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .info-div a:hover {
-        color: #145AC3;
-    }
-
-    .project-name {
-        font-size: 24px;
-        font-weight: 800;
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .timeline {
-        font-size: 20px;
-        text-align: center;
+      width: 80vw;
+      height: 65vh;
+      gap: 20px;
+      padding: 15px;
     }
 
     .project-type-div {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        font-size: 16px;
-        font-weight: 500;
+      font-size: 13px;
     }
 
-    .web-dev {
-        border: 1px solid #C42096;
-        color: #C42096; 
-        border-radius: 20px;
-        padding: 5px 10px;
+    .timeline {
+      font-size: 13px;
     }
-
-    .web-dev:hover {
-        background-color: #C42096;
-        color: #FFFFFF;
-    }
-
-    .software-dev {
-        border: 1px solid #145AC3;
-        color: #145AC3;
-        border-radius: 20px;
-        padding: 5px 10px;
-    }
-    .software-dev:hover {
-        background-color: #145AC3;
-        color: #FFFFFF;
-    }
-
-    .machine-learning {
-        border: 1px solid #DA3E1B;
-        color: #DA3E1B;
-        border-radius: 20px;
-        padding: 5px 10px;
-    }
-
-    .machine-learning:hover {
-        background-color: #DA3E1B;
-        color: #FFFFFF;
-    }
-    
-    .discord-bot {
-        border: 1px solid #4727C6;
-        color: #4727C6;
-        border-radius: 20px;
-        padding: 5px 10px;
-    }
-    
-    .discord-bot:hover {
-        background-color: #4727C6;
-        color: #FFFFFF;
-    }
-
-    .role-div {
-        margin: 10px 0;
-    }
-
-    .role {
-        margin-left: 30px;
-    }
-
-    .role-label {
-        margin: 10px 0;
-    }
-
-    .description {
-        /* font-size: 13px; */
-    }
-
-    .tools {
-        margin: 10px 0;
-
-    }
-
-    @media screen and (max-width: 630px) {
-        .card {
-            width: 80vw;
-            height: 65vh;
-            gap: 20px;
-            padding: 15px;
-        }
-
-        .project-type-div {
-            font-size: 13px;
-        }
-
-        .timeline {
-            font-size: 13px;
-        }
-    }
+  }
 </style>
