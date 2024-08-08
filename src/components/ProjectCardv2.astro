@@ -52,7 +52,6 @@ const {
         )
     }
 
-    {/* <div class="info-div"> */}
     {
       project_link != "" ? (
         <a href={project_link}>
@@ -82,26 +81,78 @@ const {
 <div id={id} class="modal">
   <div class="modal-content">
     <button class="modal-close" onclick={`closeModal('${id}')`}>&times;</button>
-    {id}
-    <div class="role-div">
-      <p class="role-label"><b>Role:</b></p>
-      <ul class="roles-list">
-        {
-          roles.map((role) => {
-            return <li class="role">{role}</li>;
-          })
-        }
-      </ul>
+    <h1 class="modal-header">{project_name}</h1>
+
+    <div class="modal-img-div">
+      {
+        img_src === "/assets/proj-discord-icon.png" && (
+          <img src={img_src} alt={project_name} class="modal-proj-icon" />
+        )
+      }
+      {
+        img_src === "/assets/proj-machine-learning-icon.png" && (
+          <img src={img_src} alt={project_name} class="modal-proj-icon" />
+        )
+      }
+      {
+        img_src !== "/assets/proj-discord-icon.png" &&
+          img_src !== "/assets/proj-machine-learning-icon.png" && (
+            <img class="modal-proj-img" src={img_src} alt={project_name} />
+          )
+      }
     </div>
 
     <div>
       <p class="description">{description}</p>
       <p class="tools"><b>Tools:</b> {tools}</p>
     </div>
+
+    <div class="list-div">
+      <p class="list-label"><b>Role:</b></p>
+      <ul class="list">
+        {
+          roles.map((role) => {
+            return <li class="list-item">{role}</li>;
+          })
+        }
+      </ul>
+    </div>
+
+    <div class="list-div">
+      <p class="list-label"><b>Contributions:</b></p>
+      <ul class="list">
+        {
+          contributions.map((contribution) => {
+            return <li class="list-item">{contribution}</li>;
+          })
+        }
+      </ul>
+    </div>
   </div>
 </div>
 
-<script src="../../public/js/modal.js"></script>
+<script type="text/javascript" src="../../public/js/modal.js"></script>
+<!-- <script>
+
+  function openModal(id: string) {
+    // console.log(id);
+    document.getElementById(id)!.style.display = "block";
+  }
+
+  function closeModal(id: string) {
+    // console.log(id);
+    document.getElementById(id)!.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    var modals = document.getElementsByClassName("modal") as HTMLCollectionOf<HTMLElement>;
+    for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        modals[i].style.display = "none";
+      }
+    }
+  };
+</script> -->
 
 <style>
   button {
@@ -110,6 +161,9 @@ const {
   }
 
   button:hover {
+    background-color: #f2f2f2;
+  }
+  button:active {
     background-color: #f2f2f2;
   }
   .modal {
@@ -124,12 +178,19 @@ const {
   }
 
   .modal-content {
+    padding: 2%;
     display: block;
     margin: 2% auto;
     width: 60vw;
-    height: 80vh;
+    height: 75vh;
     background-color: #ffffff;
+    overflow: auto;
+    border-radius: 20px;
   }
+
+  /* .modal-content::-webkit-scrollbar{
+    border-radius: 20px;
+  } */
 
   .modal-close {
     color: #000000;
@@ -144,6 +205,29 @@ const {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal-header {
+    font-weight: 800;
+    font-size: 30px;
+  }
+
+  .modal-img-div {
+    width: 100%;
+  }
+
+  .modal-proj-icon {
+    display: block;
+    width: 40%;
+    height: auto;
+    margin: 5% auto;
+  }
+
+  .modal-proj-img {
+    display: block;
+    width: 80%;
+    height: auto; 
+    margin: 5% auto;
   }
 
   a {
@@ -259,15 +343,15 @@ const {
     color: #ffffff;
   }
 
-  .role-div {
+  .list-div {
     margin: 10px 0;
   }
 
-  .role {
+  .list-item {
     margin-left: 30px;
   }
 
-  .role-label {
+  .list-label {
     margin: 10px 0;
   }
 
@@ -293,6 +377,29 @@ const {
 
     .timeline {
       font-size: 13px;
+    }
+
+    .modal-content {
+      width: 85%;
+      padding: 5%;
+    }
+
+    .modal-header {
+      font-size: 20px;
+    }
+
+    .modal-proj-icon {
+      display: block;
+      width: 80vw;
+      height: auto;
+      margin: 5vh auto;
+    }
+
+    .modal-proj-img {
+      display: block;
+      width: 80vw;
+      height: auto;
+      margin: 5vh auto;
     }
   }
 </style>
