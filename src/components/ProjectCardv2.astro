@@ -26,7 +26,6 @@ const {
 } = Astro.props;
 ---
 
-<!-- <a href={project_link}> -->
 <button onclick={`openModal('${id}')`}>
   <div class="card">
     {
@@ -132,27 +131,6 @@ const {
 </div>
 
 <script type="text/javascript" src="../../public/js/modal.js"></script>
-<!-- <script>
-
-  function openModal(id: string) {
-    // console.log(id);
-    document.getElementById(id)!.style.display = "block";
-  }
-
-  function closeModal(id: string) {
-    // console.log(id);
-    document.getElementById(id)!.style.display = "none";
-  }
-
-  window.onclick = function (event) {
-    var modals = document.getElementsByClassName("modal") as HTMLCollectionOf<HTMLElement>;
-    for (var i = 0; i < modals.length; i++) {
-      if (event.target == modals[i]) {
-        modals[i].style.display = "none";
-      }
-    }
-  };
-</script> -->
 
 <style>
   button {
