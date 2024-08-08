@@ -1,432 +1,469 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProjectHighlightLeftImg from '../components/ProjectHighlightLeftImg.astro';
-import ProjectHighlightRightImg from '../components/ProjectHighlightRightImg.astro';
+import Layout from "../layouts/Layout.astro";
+import ProjectHighlightLeftImg from "../components/ProjectHighlightLeftImg.astro";
+import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.astro";
 ---
 
 <Layout title="Janelle Uy">
-	<section class="hero">
-		<div class="flex-center">
+  <section class="flex-parent">
+    <div class="flex-center">
+      <div class="intro-info">
+        <div>
+          <h1 class="name">Hello I'm Janelle</h1>
+          <p class="specialty rajdhani-medium">Backend Developer</p>
+        </div>
 
-			<div class="intro-info">
-				<p class="name">Hello I'm Janelle</p>
-				<p class="specialty rajdhani-medium">Backend Developer</p>
-	
-				<div class="skills rajdhani-medium">
-					<p>Database Design</p>
-					<p>|</p>
-	
-					<p>API</p>
-					<p>|</p>
-	
-					<p>Discord Bots</p>
-					<p>|</p>
-	
-					<p>Database Management</p>
-					<p>|</p>
-	
-					<p>NodeJS</p>
-					<p>|</p>
-	
-					<p>Dart</p>
-					<p>|</p>
-	
-					<p>MySQL</p>
-					<p>|</p>
-	
-					<p>JavaScript</p>
-					<p>|</p>
-	
-					<p>Flutter</p>
-					<p>|</p>
-	
-					<p>Python</p>
-				</div>
-	
-				<div class="more-info-div">
-					<p class="what-i-do">I make systems to help <span class="accent">automate your</span> manually tedious <span class="accent">tasks</span>!</p>
-					<p class="what-i-do">I am a back-end developer, and I love LEARNING. I am currently learning UI/UX design as well to add to my skill set.</p>			
-					<p class="what-i-do"><a class="more-about-me" href="/about-me">More about me</a></p>	
-				</div>
-				
+        <div class="skills rajdhani-medium">
+          <p>Database Design</p>
+          <p>|</p>
 
-				<div class="contact-div">
-					<a class="button" href="mailto:jcuy@mcm.edu.ph">Contact Me</a>
-					<a class="contact-icon" href="https://github.com/JCU25" target="_blank"><img class="contact-icon" src="/assets/github-vector.svg" alt="github" width="10px" height="10px"></a>
-					<a class="contact-icon" href="https://www.linkedin.com/in/janelle-cassandra-uy" target="_blank"><img class="contact-icon" src="/assets/linkedin-vector.svg" alt="github" width="10px" height="10px"></a>
-				</div>
-			</div>
-			
-			<img class="highlight-img" src="/assets/hero_proj_highlight.png" alt="Project Highlights">
-		</div>
-	</section>
+          <p>API</p>
+          <p>|</p>
 
+          <p>Discord Bots</p>
+          <p>|</p>
 
-	<section class="highlights">
-		<div class="flex-center">
+          <p>Database Management</p>
+          <p>|</p>
 
-		</div>
-			<div class="highlights-separator">
-				<h1 class="sep1">PROJECT</h1>
-				<h3 class="sep2">highlights</h3>
-			</div>
+          <p>NodeJS</p>
+          <p>|</p>
 
-			<div class="proj-container">
-				<ProjectHighlightLeftImg
-					date="Mar 2022 - Present"
-					img_src = "/assets/ocp-website.png"
-					proj_link='https://mmcm-ocp.com'
-					title="OCP Website"
-					role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
-					project_type="Web Development"
-					description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships."
-				></ProjectHighlightLeftImg>
+          <p>Dart</p>
+          <p>|</p>
 
-				<ProjectHighlightRightImg
-					date="Oct 2023 - Feb 2024"
-					img_src = "/assets/ecd-dsa.png"
-					proj_link=''
-					title="ECD-DSA: Estimating Crowd Density to Detect Sparse Areas"
-					role="Software Developer  (Oct 2023 - Feb 2024)\nModel Training (Nov 2023 - Jan 2024)"
-					project_type="Software Development & Machine Learning"
-					description="This is an undergraduate thesis project created to help monitor crowd density and detect sparse areas from connected cameras; and generate alerts for rising crowd density, and overcrowding. Alerts generated are forwarded to other computers to alert other officers."
-				></ProjectHighlightRightImg>
+          <p>MySQL</p>
+          <p>|</p>
 
-				<ProjectHighlightLeftImg
-					date="Jul 2021 - Aug 2021"
-					img_src = "/assets/ccis-website.png"
-					proj_link=''
-					title="MMCM CCIS Website"
-					role="Backend Developer (Jul 2021 - Aug 2021)"
-					project_type="Web Development"
-					description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao (MMCM) Computing Students Society (CSS) to allow students to post their projects, and to get updates on school events."
-				></ProjectHighlightLeftImg>
-			</div>
+          <p>JavaScript</p>
+          <p>|</p>
 
-		<a class="project-button" href="/projects">View All Projects</a>
-	</section>
+          <p>Flutter</p>
+          <p>|</p>
+
+          <p>Python</p>
+        </div>
+
+        <div class="contact-div">
+          <a
+            class="contact-icon"
+            href="https://github.com/JCU25"
+            target="_blank"
+            ><img
+              class="contact-icon"
+              src="/assets/github-vector.svg"
+              alt="github"
+              width="10px"
+              height="10px"
+            /></a
+          >
+          <a
+            class="contact-icon"
+            href="https://www.linkedin.com/in/janelle-cassandra-uy"
+            target="_blank"
+            ><img
+              class="contact-icon"
+              src="/assets/linkedin-vector.svg"
+              alt="github"
+              width="10px"
+              height="10px"
+            /></a
+          >
+        </div>
+
+        <div class="more-info-div">
+          <p class="what-i-do">
+            I make custom systems to help <span class="accent"
+              >digitize and automate</span
+            > your <span class="accent"> manually tedious tasks</span>!
+          </p>
+        </div>
+
+        <div class="contact-div">
+          <a class="button" href="mailto:jcuy@mcm.edu.ph">Contact Me</a>
+        </div>
+      </div>
+
+      <img
+        class="highlight-img"
+        src="/assets/hero_proj_highlight.png"
+        alt="Project Highlights"
+      />
+    </div>
+  </section>
+
+  <section class="flex-parent half-height">
+    <div class="more-about-me-section">
+      <p class="more-about-me">
+        I am a back-end developer, and I love LEARNING. I am currently learning
+        UI/UX design as well to add to my skill set.
+      </p>
+      <p>
+        <a class="button" href="/about-me">More about me</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="flex-center"></div>
+    <div class="highlights-separator">
+      <h1 class="sep1">PROJECT</h1>
+      <h3 class="sep2">highlights</h3>
+    </div>
+
+    <div class="proj-container">
+      <ProjectHighlightLeftImg
+        date="Mar 2022 - Present"
+        img_src="/assets/ocp-website.png"
+        proj_link="https://mmcm-ocp.com"
+        title="OCP Website"
+        role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
+        project_type="Web Development"
+        description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao Office of Corporate Partnerships to monitor company partnerships and student internships."
+      />
+
+      <ProjectHighlightRightImg
+        date="Oct 2023 - Feb 2024"
+        img_src="/assets/ecd-dsa.png"
+        proj_link=""
+        title="ECD-DSA: Estimating Crowd Density to Detect Sparse Areas"
+        role="Software Developer  (Oct 2023 - Feb 2024)\nModel Training (Nov 2023 - Jan 2024)"
+        project_type="Software Development & Machine Learning"
+        description="This is an undergraduate thesis project created to help monitor crowd density and detect sparse areas from connected cameras; and generate alerts for rising crowd density, and overcrowding. Alerts generated are forwarded to other computers to alert other officers."
+      />
+
+      <ProjectHighlightLeftImg
+        date="Jul 2021 - Aug 2021"
+        img_src="/assets/ccis-website.png"
+        proj_link=""
+        title="MMCM CCIS Website"
+        role="Backend Developer (Jul 2021 - Aug 2021)"
+        project_type="Web Development"
+        description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao (MMCM) Computing Students Society (CSS) to allow students to post their projects, and to get updates on school events."
+      />
+    </div>
+
+    <a class="project-button" href="/projects">View All Projects</a>
+  </section>
 </Layout>
 
-
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-	.rajdhani-medium {
-		font-family: "Rajdhani", sans-serif;
-		font-weight: 500;
-		font-style: normal;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
 
-	p {
-		margin: 0;
-	}
+  p {
+    font-size: 1.25em;
+    margin: 0;
+  }
 
+  .flex-parent {
+    margin-top: 10%;
+    width: 99vw;
+    /* height: 65vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-	.hero {
-		margin-top: 10%;
-		width: 99vw;
-		/* height: 65vh; */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+  .highlight-img {
+    width: 45%;
+    height: 55%;
+    margin: auto;
+  }
 
+  .flex-center {
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+  }
 
-	.highlight-img {
-		width:45%;
-		height: 55%;
-		margin: auto;
-	}
+  .intro-info {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-	.flex-center {
-		width: 85vw;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap: 30px;
-	}
+  .name {
+    font-family: "Manrope", sans-serif;
+    /* font-size: 59px; */
+    font-size: 45px;
+  }
 
-	.intro-info {
-		width: 40vw;
-		display: flex;
-		flex-direction: column;
-	}
+  .specialty {
+    font-size: 1.25em;
+    margin-top: 2%;
+  }
 
-	.name {
-		font-family: "Manrope", sans-serif;
-		/* font-size: 59px; */
-		font-size: 45px;
-	}
+  .skills {
+    margin-top: 30px;
+    /* width: 470px; */
+    width: 80%;
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 25px;
+  }
 
-	.specialty {
-		font-size: 1.25em;
-		margin-top: 2%;
-	}
+  .more-info-div {
+    margin: 5% 0;
+  }
 
-	.skills {
-		margin-top: 30px;
-		/* width: 470px; */
-		width: 80%;
-		font-size: 1.25em;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		column-gap: 25px;
-	}
+  .what-i-do {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.25em;
+  }
 
-	.more-info-div {
-		margin-top: 30px;
-		margin-bottom: 10%;
-	}
+  .contact-div {
+    margin: 5% 0;
+    display: flex;
+    gap: 20px;
+  }
 
-	.what-i-do {
-		margin-top: 5%;
-		font-family: "Manrope", sans-serif;
-		font-size: 1.25em;
-		white-space: break-spaces;
-	}
+  .more-about-me-section {
+    width: 40vw;
+    height: 30vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
 
-	.contact-div {
-		display: flex;
-		gap: 20px
-	}
+  /* .more-about-me-btn {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: #0f6572;
+    text-decoration: none;
+    margin: 30px 0;
+  }
+  .more-about-me-btn:hover {
+    font-weight: 800;
+    text-decoration: underline;
+  }
+   */
 
-	.more-about-me {
-		font-family: "Manrope", sans-serif;
-		font-weight: 600;
-		color: #0F6572;
-		text-decoration: none;
-		margin: 30px 0;
-	}
-	.more-about-me:hover {
-		font-weight: 800;
-		text-decoration: underline;
-	}
+  .button {
+    /* margin-top: 10%; */
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    background-color: #262E6E;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
 
-	.button {
-		/* margin-top: 10%; */
-		color: #FFFFFF;
-		font-family: "Manrope", sans-serif;
-		font-weight: 600;
-		background-color: #90420A;
-		padding: 10px;
-		border-radius: 10px;
-		text-decoration: none;
-	}
+  .button:hover {
+    background-color: #623717;
+  }
 
+  .accent {
+    font-weight: 800;
+  }
 
-	.button:hover {
-		background-color: #623717;
-	}
+  .contact-icon {
+    /* margin-top: 10%; */
+    width: 35px;
+    height: 35px;
+  }
 
-	.accent {
-		font-weight: 800;
-	}
+  .highlights {
+    width: 99vw;
+    /* height: 100vh; */
+    padding: 7%;
+    box-sizing: border-box;
+  }
 
+  .highlights-separator {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .sep1 {
+    /* font-size: 90px; */
+    /* font-size: 3.5vw; */
+    font-size: 60px;
+    font-weight: 400;
+  }
+  .sep2 {
+    margin-left: 15%;
+    /* font-size: 46px; */
+    /* font-size: 2.86em; */
+    font-size: 40px;
+    font-weight: 300;
+  }
 
+  .project-button {
+    font-size: 15px;
+    text-align: right;
+    display: block;
+    width: 95%;
+    color: #262E6E;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
-	.contact-icon {
-		/* margin-top: 10%; */
-		width: 35px;
-		height: 35px;
-	}
+  .project-button:hover {
+    font-weight: 800;
+    text-decoration: underline;
+  }
 
-	.highlights {
-		width: 99vw;
-		/* height: 100vh; */
-		padding: 7%;
-		box-sizing: border-box;
-	}
+  @media screen and (max-width: 768px) {
+    p {
+      margin: 0;
+    }
 
-	.highlights-separator {
-		display: flex;
-		flex-direction: column;
-		margin-bottom: 20px;
-		/* justify-content: center; */
-		align-items: center;
-		
-	}
-	.sep1 {
-		/* font-size: 90px; */
-		/* font-size: 3.5vw; */
-		font-size: 60px;
-		font-weight: 400;
-	}
-	.sep2{
-		margin-left: 15%;
-		/* font-size: 46px; */
-		/* font-size: 2.86em; */
-		font-size: 40px;
-		font-weight: 300;
-	}
+    .flex-parent {
+      margin-top: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: auto;
+      padding: 10px;
+    }
 
-	.project-button {
-		font-size: 15px;
-		text-align: right;
-		display: block;
-		width: 95%;
-		color: #90420A;
-		font-weight: 700;
-		text-decoration: none;
-	}
+    .half-height {
+      height: 30vh;
+    }
 
-	.project-button:hover {
-		font-weight: 800;
-		text-decoration: underline;
-	}
+    .highlight-img {
+	  margin: 80px auto 5% auto;
+      width: 70%;
+      height: 55%;
+      padding: 0;
+    }
 
-	@media screen and (max-width:768px) {
-		p {
-			margin: 0;
-		}
+    .flex-center {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      /* gap: 56px; */
+    }
 
+    .intro-info {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
 
-		.hero {
-			margin-top: 30px;
-			width: 100%;
-			box-sizing: border-box;
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: flex-start;
-			overflow: auto;
-			padding: 10px;
+    .name {
+      font-family: "Manrope", sans-serif;
+      /* font-size: 59px; */
+      font-size: 30px;
+      text-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
 
-		}
+    .specialty {
+      font-size: 18px;
+      margin-top: 2%;
+    }
 
-		.highlight-img {
-			margin: 7% auto 0;
-			width:70%;
-			height: 55%;
-			padding: 0;
-		}
+    .skills {
+      margin-top: 30px;
+      width: 85%;
+      font-size: 15px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 2%;
+    }
 
-		.flex-center {
-			display: flex;
-			flex-direction: column-reverse;
-			justify-content: space-between;
-			/* gap: 56px; */
-		}
+    .contact-icon {
+      width: 28px;
+    }
 
-		.intro-info {
-			width: 100%;
-			padding: 0;
-			margin: 0;
-		}
+    .contact-div {
+      display: flex;
+      gap: 15px;
+      /* justify-content: center; */
+    }
 
-		.name {
-			font-family: "Manrope", sans-serif;
-			/* font-size: 59px; */
-			font-size: 30px;
-			text-wrap: wrap;
-			padding: 0;
-			margin: 0;
-		}
+    .more-info-div {
+      /* margin-top: 30px; */
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
 
-		.specialty {
-			font-size: 18px;
-			margin-top: 2%;
-		}
+    .what-i-do {
+      /* margin-top: 5%; */
+      font-family: "Manrope", sans-serif;
+      font-size: 15px;
+      white-space: break-spaces;
+    }
 
-		.skills {
-			margin-top: 30px;
-			width:85%;
-			font-size: 15px;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			column-gap: 2%;
-		}
+    .more-about-me-section {
+      width: 85vw;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-		.contact-icon {
-			width: 28px;
-		}
+    .button {
+      font-size: 15px;
+      color: #ffffff;
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+      background-color: #262E6E;
+      padding: 8px;
+      border-radius: 10px;
 
-		.contact-div {
-			display: flex;
-			gap: 15px;
-			/* justify-content: center; */
-		}
+      text-decoration: none;
+    }
 
-		.more-info-div {
-			/* margin-top: 30px; */
-			margin-top: 0;
-			margin-bottom: 30px;
-		}
+    .button:hover {
+      background-color: #623717;
+    }
 
-		.what-i-do {
-			/* margin-top: 5%; */
-			font-family: "Manrope", sans-serif;
-			font-size: 15px;
-			white-space: break-spaces;
-		}
+    .accent {
+      font-weight: 800;
+    }
 
-		.more-about-me {
-			font-family: "Manrope", sans-serif;
-			font-weight: 600;
-			color: #0F6572;
-			text-decoration: none;
-			margin-top: 40px;
-		}
-		.more-about-me:hover {
-			font-weight: 800;
-			text-decoration: underline;
-		}
+    .highlights {
+      width: 99vw;
+      padding: 50px 20px;
+      box-sizing: border-box;
+    }
 
-		.button {
-			/* margin-top: 40px; */
-			font-size: 15px;
-			color: #FFFFFF;
-			font-family: "Manrope", sans-serif;
-			font-weight: 600;
-			background-color: #90420A;
-			padding: 8px;
-			border-radius: 10px;
+    .highlights-separator {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+    }
 
-			text-decoration: none;
-		}
+    .proj-container {
+      margin-top: 50px;
+    }
+    .sep1 {
+      /* font-size: 90px; */
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .sep2 {
+      margin-left: 20%;
+      font-size: 25px;
+      font-weight: 400;
+    }
 
-		.button:hover {
-			background-color: #623717;
-		}
-
-		.accent {
-			font-weight: 800;
-		}
-
-		.highlights {
-			width: 99vw;
-			padding: 50px 20px;
-			box-sizing: border-box;
-		}
-
-		.highlights-separator {
-			display: flex;
-			flex-direction: column;
-			/* justify-content: center; */
-			align-items: center;	
-		}
-
-		.proj-container {
-			margin-top: 50px;
-		}
-		.sep1 {
-			/* font-size: 90px; */
-			font-size: 40px;
-			font-weight: 400;
-		}
-		.sep2{
-			margin-left: 20%;
-			font-size: 25px;
-			font-weight: 400;
-		}
-
-		.project-button {
-			font-size: 15px;
-			margin: 40px 0;
-			text-decoration: none;
-		}
-	}
-
-
-	
+    .project-button {
+      font-size: 15px;
+      margin: 40px 0;
+      text-decoration: none;
+    }
+  }
 </style>
