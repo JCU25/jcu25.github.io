@@ -6,7 +6,7 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
 <Layout title="Janelle Uy">
   <section class="flex-parent">
-    <div class="flex-center">
+    <div class="flex-center hero-section">
       <div class="intro-info">
         <div>
           <h1 class="name">Hello I'm Janelle</h1>
@@ -143,7 +143,7 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       />
     </div>
 
-    <a class="project-button" href="/projects">View All Projects</a>
+    <a class="project-button" href="/projectsv2">View All Projects</a>
   </section>
 </Layout>
 
@@ -161,12 +161,14 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
   }
 
   .flex-parent {
-    margin-top: 10%;
     width: 99vw;
-    /* height: 65vh; */
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .hero-section {
+    margin-top: 10%;
   }
 
   .highlight-img {
@@ -185,6 +187,7 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
   .intro-info {
     width: 40vw;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -192,7 +195,6 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
   .name {
     font-family: "Manrope", sans-serif;
-    /* font-size: 59px; */
     font-size: 45px;
   }
 
@@ -203,9 +205,8 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
   .skills {
     margin-top: 30px;
-    /* width: 470px; */
     width: 80%;
-    font-size: 1.25em;
+    font-size: 1em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -218,7 +219,7 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
   .what-i-do {
     font-family: "Manrope", sans-serif;
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 
   .contact-div {
@@ -229,28 +230,14 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
   .more-about-me-section {
     width: 40vw;
-    height: 30vh;
+    height: 20vh;
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 60px;
   }
 
-  /* .more-about-me-btn {
-    font-family: "Manrope", sans-serif;
-    font-weight: 600;
-    color: #0f6572;
-    text-decoration: none;
-    margin: 30px 0;
-  }
-  .more-about-me-btn:hover {
-    font-weight: 800;
-    text-decoration: underline;
-  }
-   */
-
   .button {
-    /* margin-top: 10%; */
     color: #ffffff;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
@@ -269,14 +256,12 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
   }
 
   .contact-icon {
-    /* margin-top: 10%; */
     width: 35px;
     height: 35px;
   }
 
   .highlights {
     width: 99vw;
-    /* height: 100vh; */
     padding: 7%;
     box-sizing: border-box;
   }
@@ -285,19 +270,14 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    /* justify-content: center; */
     align-items: center;
   }
   .sep1 {
-    /* font-size: 90px; */
-    /* font-size: 3.5vw; */
     font-size: 60px;
     font-weight: 400;
   }
   .sep2 {
     margin-left: 15%;
-    /* font-size: 46px; */
-    /* font-size: 2.86em; */
     font-size: 40px;
     font-weight: 300;
   }
@@ -323,7 +303,6 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
     }
 
     .flex-parent {
-      margin-top: 30px;
       width: 100%;
       box-sizing: border-box;
       height: 95vh;
@@ -334,9 +313,13 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       padding: 10px;
     }
 
+    .hero-section {
+      margin-top: 30px;
+    }
+
     .half-height {
       align-items: center;
-      height: 50vh;
+      height: 40vh;
     }
 
     .highlight-img {
@@ -350,12 +333,11 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       display: flex;
       flex-direction: column-reverse;
       justify-content: space-between;
-      /* gap: 56px; */
     }
 
     .intro-info {
       width: 100%;
-	  gap: 5px;
+      gap: 0px;
       padding: 0;
       margin: 0;
     }
@@ -391,20 +373,16 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
     .contact-div {
       display: flex;
       gap: 15px;
-      /* justify-content: center; */
     }
 
     .more-info-div {
-      /* margin-top: 30px; */
       margin-top: 0;
       margin-bottom: 30px;
     }
 
     .what-i-do {
-      /* margin-top: 5%; */
       font-family: "Manrope", sans-serif;
-      font-size: 15px;
-      white-space: break-spaces;
+      font-size: 1.15em;
     }
 
     .more-about-me-section {
@@ -444,15 +422,16 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
     .highlights-separator {
       display: flex;
       flex-direction: column;
-      /* justify-content: center; */
       align-items: center;
     }
 
     .proj-container {
+      display: flex;
+      flex-direction: column;
       margin-top: 50px;
+      gap: 12px;
     }
     .sep1 {
-      /* font-size: 90px; */
       font-size: 40px;
       font-weight: 400;
     }
