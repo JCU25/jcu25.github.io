@@ -111,6 +111,11 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       <h3 class="sep2">highlights</h3>
     </div>
 
+    
+    <div class="project-button-div">
+      <a class="project-button" href="/projectsv2">View All Projects</a>
+    </div>
+
     <div class="proj-container">
       <ProjectHighlightLeftImg
         date="Mar 2022 - Present"
@@ -143,7 +148,10 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       />
     </div>
 
-    <a class="project-button" href="/projectsv2">View All Projects</a>
+    <div class="project-button-div">
+      <a class="project-button" href="/projectsv2">View All Projects</a>
+    </div>
+    
   </section>
 </Layout>
 
@@ -165,6 +173,11 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .half-height {
+    /* height: 40vh;*/
+    margin: 2% 0 7% 0;
   }
 
   .hero-section {
@@ -292,12 +305,15 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
   .project-button {
     font-size: 15px;
     margin: 40px 0;
-    text-align: right;
     display: block;
-    width: 95%;
     color: #262e6e;
     font-weight: 700;
     text-decoration: none;
+  }
+
+  .project-button-div {
+    display: flex;
+    justify-content: flex-end;
   }
 
   .project-button:hover {
@@ -327,6 +343,7 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
 
     .half-height {
       align-items: center;
+      margin: 0;
       height: 40vh;
     }
 
