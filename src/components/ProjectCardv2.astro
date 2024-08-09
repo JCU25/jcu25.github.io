@@ -28,40 +28,63 @@ const {
 
 <button onclick={`openModal('${id}')`}>
   <div class="card">
-    {
-      img_src === "/assets/proj-discord-icon.png" && (
-        <a class="discord-img" href={project_link}>
-          <img src={img_src} alt={project_name} class="discord-img" />
-        </a>
-      )
-    }
-    {
-      img_src === "/assets/proj-machine-learning-icon.png" && (
-        <a class="machine-learning-img" href={project_link}>
-          <img src={img_src} alt={project_name} class="machine-learning-img" />
-        </a>
-      )
-    }
-    {
-      img_src !== "/assets/proj-discord-icon.png" &&
-        img_src !== "/assets/proj-machine-learning-icon.png" && (
-          <a href={project_link}>
-            <img src={img_src} alt={project_name} class="proj-img" />
+    <div>
+      <div class="proj-card-icon-div">
+        {
+          project_link && project_link.includes("github") && (
+            <a target="_blank" href={project_link}>
+              <img
+                class="proj-card-git-icon"
+                src="/public/assets/github-vector.svg"
+                alt="Github Link"
+              />
+            </a>
+          )
+        }
+        {
+          project_link && !project_link.includes("github") && (
+            <a target="_blank" href={project_link}>
+              <img
+                class="proj-card-redir-icon"
+                src="/public/assets/open-link-icon.svg"
+                alt="Project Link"
+              />
+            </a>
+          )
+        }
+      </div>
+
+      {
+        img_src === "/assets/proj-discord-icon.png" && (
+          <a class="discord-img">
+            <img src={img_src} alt={project_name} class="discord-img" />
           </a>
         )
-    }
+      }
+      {
+        img_src === "/assets/proj-machine-learning-icon.png" && (
+          <a class="machine-learning-img">
+            <img
+              src={img_src}
+              alt={project_name}
+              class="machine-learning-img"
+            />
+          </a>
+        )
+      }
+      {
+        img_src !== "/assets/proj-discord-icon.png" &&
+          img_src !== "/assets/proj-machine-learning-icon.png" && (
+            <a>
+              <img src={img_src} alt={project_name} class="proj-img" />
+            </a>
+          )
+      }
+    </div>
 
-    {
-      project_link != "" ? (
-        <a href={project_link}>
-          <header class="project-name">{project_name}</header>
-        </a>
-      ) : (
-        <a>
-          <header class="project-name">{project_name}</header>
-        </a>
-      )
-    }
+    <a>
+      <header class="project-name">{project_name}</header>
+    </a>
 
     <div class="project-type-div">
       {
@@ -79,8 +102,59 @@ const {
 
 <div id={id} class="modal">
   <div class="modal-content">
-    <button class="modal-close" onclick={`closeModal('${id}')`}>&times;</button>
-    <h1 class="modal-header">{project_name}</h1>
+    <!-- don't include any icons beside the project title for those without links -->
+    {
+      project_link == "" && (
+        <header class="modal-header">
+          <h1 class="modal-header">{project_name}</h1>
+          <button class="modal-close" onclick={`closeModal('${id}')`}>
+            &times;
+          </button>
+        </header>
+      )
+    }
+
+    <!-- insert github icon linked to project to projects with git repository -->
+    {
+      project_link.includes("github") && (
+        <header class="modal-header">
+          <div class="modal-title-div">
+            <h1 class="modal-header">{project_name}</h1>
+            <a target="_blank" href={project_link}>
+              <img
+                class="modal-link-icon git-icon"
+                src="/public/assets/github-vector.svg"
+                alt="Github Link"
+              />
+            </a>
+          </div>
+          <button class="modal-close" onclick={`closeModal('${id}')`}>
+            &times;
+          </button>
+        </header>
+      )
+    }
+
+    <!-- insert redirect icon linked to project to projects with non-git links -->
+    {
+      project_link && !project_link.includes("github") && (
+        <header class="modal-header">
+          <div class="modal-title-div">
+            <h1 class="modal-header">{project_name}</h1>
+            <a target="_blank" href={project_link}>
+              <img
+                class="modal-link-icon redir-icon"
+                src="/public/assets/open-link-icon.svg"
+                alt="Project Link"
+              />
+            </a>
+          </div>
+          <button class="modal-close" onclick={`closeModal('${id}')`}>
+            &times;
+          </button>
+        </header>
+      )
+    }
 
     <div class="modal-img-div">
       {
@@ -153,17 +227,51 @@ const {
     top: 10%;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    a:hover {
+      background-color: #cccccc;
+    }
+    .redir-icon {
+      width: auto;
+      height: 25px;
+    }
+
+    .git-icon {
+      width: auto;
+      height: 30px;
+    }
   }
 
   .modal-content {
-    padding: 2%;
+    padding: 2% 5% ;
     display: block;
     margin: 2% auto;
-    width: 60vw;
+    width: 70vw;
     height: 75vh;
     background-color: #ffffff;
     overflow: auto;
     border-radius: 20px;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-title-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-display: row;
+    gap: 20px;
   }
 
   /* .modal-content::-webkit-scrollbar{
@@ -191,7 +299,8 @@ const {
   }
 
   .modal-img-div {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
   }
 
   .modal-proj-icon {
@@ -224,6 +333,22 @@ const {
     gap: 20px;
     font-size: 13px;
     overflow: auto;
+  }
+
+  .proj-card-icon-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 35px;
+
+    .proj-card-git-icon {
+      width: auto;
+      height: 25px;
+    }
+    .proj-card-redir-icon {
+      width: auto;
+      height: 20px;
+    }
   }
 
   .proj-img {
@@ -382,7 +507,7 @@ const {
 
     .modal-proj-img {
       display: block;
-      width: 80vw;
+      width: 100%;
       height: auto;
       margin: 5% auto;
     }
