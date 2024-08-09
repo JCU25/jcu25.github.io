@@ -92,12 +92,20 @@ const {date, img_src, proj_link, title, role, project_type, description} = Astro
     .proj-info-container {
         gap: 5%;
         align-items: center;
+        border-radius: 20px;
+        width: 100%;
+        padding: 2%;
         /* margin: 20px 0; */
+    }
+
+    .proj-info-container:hover {
+        background-color: #f2f2f2;
     }
 
     .proj-info {
         width: 100%;
         gap: 20px;
+        text-wrap: wrap;
 
         p {
             font-size: 15px;
