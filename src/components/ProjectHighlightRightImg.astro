@@ -1,224 +1,233 @@
 ---
 interface Props {
-    date: string;
-    img_src: string;
-    proj_link: string;
-    title: string;
-    role: string;
-    project_type: string;
-    description: string;
+  date: string;
+  img_src: string;
+  proj_link: string;
+  title: string;
+  role: string;
+  project_type: string;
+  description: string;
 }
 
-const {date, img_src, proj_link, title, role, project_type, description} = Astro.props;
+const { date, img_src, proj_link, title, role, project_type, description } =
+  Astro.props;
 ---
 
 <div class="highlight-container">
+  <div class="flex horizontal proj-info-container">
+    <div class="flex column proj-info">
+      {
+        proj_link ? (
+          <a target="_blank" href={proj_link}>
+            <h2>{title}</h2>
+          </a>
+        ) : (
+          <a>
+            <h2>{title}</h2>
+          </a>
+        )
+      }
+      <div class="role">
+        <p>Role:</p>
+        <p>{role}</p>
+      </div>
 
+      <p class="proj-type">{project_type}</p>
 
-    <div class="flex horizontal proj-info-container">
-
-        <div class="flex column proj-info">
-            <a href={proj_link}><h2>{title}</h2></a>
-            <div class="role">
-                <p>Role:</p>
-                <p >{role}</p>
-            </div>
-    
-            <p class="proj-type">{project_type}</p>
-    
-            <p class="description">{description}</p>
-        </div>
-
-        <div class="flex column date-img-div">
-            <p class="timeframe">{date}</p>
-            <a class="img-link" href={proj_link} target="_blank">
-                <img src={img_src} alt={title}>
-            </a>    
-        </div>
+      <p class="description">{description}</p>
     </div>
 
+    <div class="flex column date-img-div">
+      <p class="timeframe">{date}</p>
+      {
+        proj_link ? (
+          <a class="img-link" target="_blank" href={proj_link} target="_blank">
+            <img src={img_src} alt={title} />
+          </a>
+        ) : (
+          <a class="img-link" target="_blank">
+            <img src={img_src} alt={title} />
+          </a>
+        )
+      }
+    </div>
+  </div>
 </div>
 
 <style>
+  h2 {
+    font-weight: 800;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  div {
+    overflow: auto;
+  }
+
+  .horizontal {
+    flex-direction: row;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .highlight-container {
+    display: flex;
+    flex-direction: column;
+    /* margin: 10px 48px; */
+    /* padding: 45px 35px; */
+  }
+
+  .date-img-div {
+    gap: 22px;
+  }
+
+  .highlight-container img {
+    margin: auto;
+    width: 100%;
+  }
+
+  .timeframe {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .proj-info-container {
+    gap: 5%;
+    align-items: center;
+    border-radius: 20px;
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+    /* margin: 20px 0; */
+  }
+  .proj-info-container:hover {
+    background-color: #f2f2f2;
+  }
+
+  .proj-info {
+    width: 100%;
+    gap: 20px;
+    text-wrap: wrap;
+
+    p {
+      font-size: 15px;
+    }
+
     h2 {
-        font-weight: 800;
+      font-size: 22px;
     }
+  }
 
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
+  .role p {
+    white-space: pre;
+    font-weight: 700;
+    font-size: 15px;
+    text-wrap: wrap;
+  }
 
-    div {
-        overflow: auto;
-    }
+  .proj-type {
+    font-style: italic;
+  }
 
+  .description {
+    font-weight: 600;
+  }
 
-    .horizontal
-    {
-        flex-direction: row;
-    }
-
-    .column {
-        flex-direction: column;
-    }
-
-    .flex {
-        display: flex;
-    }
-
-    .highlight-container {
-        display: flex;
-        flex-direction: column;
-        /* margin: 10px 48px; */
-        /* padding: 45px 35px; */
-    }
-    
-    .date-img-div {
-        gap: 22px;
-
-    }
-
-    .highlight-container img {
-        margin: auto;
-        width: 100%;
-    }
-
-    .timeframe {
-        font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .proj-info-container {
-        gap: 5%;
-        align-items: center;
-        border-radius: 20px;
-        width: 100%;
-        padding: 2%;
-        box-sizing: border-box;
-        /* margin: 20px 0; */
-    }
-    .proj-info-container:hover {
-        background-color: #f2f2f2;
-    }
-
-    .proj-info {
-        width: 100%;
-        gap: 20px;
-        text-wrap: wrap;
-
-        p {
-            font-size: 15px;
-        }
-
-        h2 {
-            font-size: 22px;
-        }
-    }
-
-    .role p {
-        white-space: pre;
-        font-weight: 700;
-        font-size: 15px;
-        text-wrap: wrap;
-    }
-
-    .proj-type {
-        font-style: italic;
-    }
-
-    .description {
-        font-weight: 600;
-    }
-
-    @media screen and (max-width:768px) {
-        
-    .horizontal
-    {
-        flex-direction: column-reverse;
+  @media screen and (max-width: 768px) {
+    .horizontal {
+      flex-direction: column-reverse;
     }
 
     .column {
-        flex-direction: column;
+      flex-direction: column;
     }
 
     .flex {
-        display: flex;
+      display: flex;
     }
 
     .highlight-container {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center;
         align-items: center; */
-        /* margin: 10px 48px;
+      /* margin: 10px 48px;
         padding: 45px 25px; */
-        margin: 0; 
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
-    
+
     .date-img-div {
-        gap: 15px;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
+      gap: 15px;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
     }
 
     .img-link {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
     }
     .highlight-container img {
-        width: 90%;
-        margin: 0 auto;
+      width: 90%;
+      margin: 0 auto;
     }
 
     .timeframe {
-        width: 90%;
-        text-align: left;
-        font-weight: 700;
-        font-size: 18px;
+      width: 90%;
+      text-align: left;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     .proj-info-container {
-        gap: 5%;
-        align-self: center;
-        justify-self: center;
-        margin: 10px 0;
-        width: 95%;
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
-        border-radius: 20px;
-        padding: 20px 0;
+      gap: 5%;
+      align-self: center;
+      justify-self: center;
+      margin: 10px 0;
+      width: 95%;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      padding: 20px 0;
     }
 
     .proj-info {
-        margin-top: 10px;
-        width: 90%;
-        gap: 24px;
+      margin-top: 10px;
+      width: 90%;
+      gap: 24px;
 
-        p {
-            font-size: 15px;
-        }
+      p {
+        font-size: 15px;
+      }
 
-        h2 {
-            font-size: 20px;
-        }
+      h2 {
+        font-size: 20px;
+      }
     }
 
     .role p {
-        white-space: pre;
-        font-weight: 700;
-        word-wrap: wrap;
+      white-space: pre;
+      font-weight: 700;
+      word-wrap: wrap;
     }
 
     .proj-type {
-        font-style: italic;
+      font-style: italic;
     }
 
     .description {
-        font-weight: 600;
+      font-weight: 600;
     }
-    }
-
+  }
 </style>
