@@ -14,11 +14,9 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
         </div>
 
         <div class="skills rajdhani-medium">
-          
           <p>Web Development</p>
           <p>|</p>
 
-          
           <p>Software Development</p>
           <p>|</p>
 
@@ -37,7 +35,6 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
           <p>NodeJS</p>
           <p>|</p>
 
-          
           <p>Spring Boot</p>
           <p>|</p>
 
@@ -128,47 +125,76 @@ import ProjectHighlightRightImg from "../components/ProjectHighlightRightImg.ast
       <h3 class="sep2">highlights</h3>
     </div>
 
-    
     <div class="project-button-div">
       <a class="project-button" href="/projectsv2">View All Projects</a>
     </div>
 
     <div class="proj-container">
       <ProjectHighlightLeftImg
+        id="ocp"
         date="Mar 2022 - Present"
         img_src="/assets/ocp-website.png"
         proj_link="https://mmcm-ocp.com"
         title="OCP Website"
-        role="Backend Lead (Jun 2022 - Present)\nBackend Developer (Mar 2022 - Present)"
+        roles={[
+          "Backend Lead (Jun 2022 - Present)",
+          "Backend Developer (Mar 2022 - Present)",
+        ]}
+        contributions={[
+          "Developed server-side logic such as: cron jobs, exporting information into excel files, database queries, scripts, etc.",
+          "Created efficient database queries for all data.",
+          "Designed and implemented MySQL database, and REST APIs.",
+          "Participated in planning, and communicating with the administrators and staffs, and other teams and members to effectively carry out tasks, and implement new features on time.",
+          "Reduced redundant and manual labor by creating automated and scheduled tasks (email sending, contract expiration checker, etc.).",
+          "Contributed to site deployment and maintenance with Vultr Object Storage, Linux VPS",
+        ]}
         project_type="Web Development"
         description="Developed a website for the Mapua Malayan Colleges Mindanao (MMCM) Office of Corporate Partnerships (OCP) to monitor company partnerships and student internship data."
+        tools="NodeJS, MySQL, ReactJS, Ubuntu-based Virtual Private Server"
       />
 
       <ProjectHighlightRightImg
+        id="ecd"
         date="Oct 2023 - Feb 2024"
         img_src="/assets/ecd-dsa.png"
         proj_link=""
         title="ECD-DSA: Estimating Crowd Density to Detect Sparse Areas"
-        role="Software Developer  (Oct 2023 - Feb 2024)\nModel Training (Nov 2023 - Jan 2024)"
+        roles={[
+          "Software Developer  (Oct 2023 - Feb 2024)",
+          "Model Trainer (Nov 2023 - Jan 2024)",
+        ]}
+        contributions={[
+          "Created and planned server-side logic, and system",
+          "Proposed main methodology for estimating crowd density.",
+          "Created an alarm and notification system using event-driven architecture (Socket.IO) for informing personnel in-charge of emergency situations real-time.",
+          "Trained artificial intelligence models, specifically YOLOv8 models, to improve model accuracy and performance in detecting humans real-time to estimate the crowd density.",
+          "Deployed the server to Render (web service) for the network socket communication used by the alarm system",
+        ]}
         project_type="Software Development & Machine Learning"
         description="This is an undergraduate thesis project created to help monitor crowd density and detect sparse areas from connected cameras; and generate alerts for rising crowd density, and overcrowding. Alerts generated are forwarded to other computers to alert other officers."
+        tools="Python, PyQt5, YOLOv8, Render"
       />
 
       <ProjectHighlightLeftImg
+        id="ccis-website"
         date="Jul 2021 - Aug 2021"
         img_src="/assets/ccis-website.png"
         proj_link=""
         title="MMCM CCIS Website"
-        role="Backend Developer (Jul 2021 - Aug 2021)"
+        roles={["Backend Developer (Jul 2021 - Aug 2021)"]}
+        contributions={[
+          "Created  functionality for viewing, adding and editing faculties and student officers per school year",
+          "Created pages using EJS for viewing information on faculties and student officers per school year",
+        ]}
         project_type="Web Development"
         description="This is a voluntary project we made for the Mapua Malayan Colleges Mindanao (MMCM) Computing Students Society (CSS) to allow students to post their projects, and to get updates on school events."
+        tools="NodeJS, ReactJS, REST API"
       />
     </div>
 
     <div class="project-button-div">
       <a class="project-button" href="/projectsv2">View All Projects</a>
     </div>
-    
   </section>
 </Layout>
 
