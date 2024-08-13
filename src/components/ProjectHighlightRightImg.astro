@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="highlight-container">
+<div onclick={`openModal('${id}')`} class="highlight-container">
   <div class="flex horizontal proj-info-container">
     <div class="flex column proj-info">
       {
@@ -213,7 +213,7 @@ const {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    margin: 0;
+    margin: 0 20px;
     padding: 0;
   }
   
@@ -271,7 +271,8 @@ const {
     font-weight: 600;
   }
 
-    .modal {
+
+  .modal {
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -280,6 +281,23 @@ const {
     top: 10%;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
+
+    button {
+      border: none;
+      background-color: #ffffff;
+      border-radius: 20px;
+    }
+
+    button:hover {
+      background-color: #f2f2f2;
+    }
+
+    button:active {
+      background-color: #f2f2f2;
+    }
+    p {
+      margin-top: 20px;
+    }
 
     a {
       display: flex;
@@ -364,6 +382,14 @@ const {
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    .modal-header {
+      font-weight: 800;
+      font-size: 24px;
+    }
+  }
+
+
   @media screen and (max-width: 768px) {
     .horizontal {
       flex-direction: column-reverse;
@@ -380,7 +406,6 @@ const {
     .highlight-container {
       display: flex;
       flex-direction: column;
-      border-radius: 20px;
       margin: 0;
       padding: 0;
     }
@@ -414,6 +439,7 @@ const {
       justify-self: center;
       margin: 10px 0;
       width: 95%;
+      border-radius: 20px;
       box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
       padding: 20px 0;
     }
