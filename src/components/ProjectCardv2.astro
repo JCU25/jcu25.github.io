@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<button onclick={`openModal('${id}')`}>
+<button id={`${id}-modal-button`}>
   <div class="card">
     <div>
       <div class="proj-card-icon-div">
@@ -149,7 +149,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -204,7 +204,38 @@ const {
   </div>
 </div>
 
-<script type="text/javascript" src="../src/js/modal.js"></script>
+<!-- <script type="text/javascript" src="../src/js/modal.js"></script> -->
+
+
+<script define:vars={{ id }}>
+  console.log(id);
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    var modals = document.getElementsByClassName("modal");
+    for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        modals[i].style.display = "none";
+      }
+    }
+  };
+
+  document
+    .getElementById(`${id}-modal-button`)
+    .addEventListener("click", () => openModal(id));
+
+  document
+    .getElementById(`${id}-modal-close`)
+    .addEventListener("click", () => closeModal(id))
+  
+</script>
+
 
 <style>
   button {
