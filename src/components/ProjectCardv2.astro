@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<button id={`${id}-modal-button`}>
+<button type="button" id={`${id}-modal-button`}>
   <div class="card">
     <div>
       <div class="proj-card-icon-div">
@@ -107,7 +107,7 @@ const {
       project_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{project_name}</h1>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -128,7 +128,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -149,7 +149,7 @@ const {
               />
             </a>
           </div>
-          <button id={`${id}-modal-close`} class="modal-close">
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -206,7 +206,6 @@ const {
 
 <!-- <script type="text/javascript" src="../src/js/modal.js"></script> -->
 
-
 <script define:vars={{ id }}>
   console.log(id);
   function openModal(id) {
@@ -232,10 +231,8 @@ const {
 
   document
     .getElementById(`${id}-modal-close`)
-    .addEventListener("click", () => closeModal(id))
-  
+    .addEventListener("click", () => closeModal(id));
 </script>
-
 
 <style>
   button {
@@ -261,11 +258,9 @@ const {
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
 
-
     p {
       margin-top: 20px;
     }
-
 
     a {
       display: flex;
@@ -521,7 +516,7 @@ const {
     .timeline {
       font-size: 13px;
     }
-    
+
     .modal {
       .modal-content {
         width: 85%;
