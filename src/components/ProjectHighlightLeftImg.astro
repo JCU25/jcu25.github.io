@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<div id=`${id}-modal-button` class="highlight-container">
+<div id={`${id}-modal-button`} class="highlight-container">
   <div class="flex horizontal proj-info-container">
     <div class="flex column date-img-div">
       <p class="timeframe">{date}</p>
@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button id=`${id}-modal-close` class="modal-close" onclick={`closeModal('${id}')`}>
+          <button id={`${id}-modal-close`} class="modal-close" onclick={`closeModal('${id}')`}>
             &times;
           </button>
         </header>
