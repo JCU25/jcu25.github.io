@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button class="modal-close">
             &times;
           </button>
         </header>
@@ -205,6 +205,11 @@ const {
   document
     .getElementById(`${id}-modal-button`)
     .addEventListener("click", () => openModal(id));
+
+  document
+    .getElementsByClassName("modal-close")
+    .addEventListener("click", () => closeModal(id))
+  
 </script>
 
 <style>
