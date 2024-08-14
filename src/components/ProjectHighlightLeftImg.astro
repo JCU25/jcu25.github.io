@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button id={`${id}-modal-close`} class="modal-close">
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -102,8 +102,8 @@ const {
                 alt="Github Link"
               />
             </a>
-          </div>
-          <button class="modal-close">
+          </div>{" "}
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -124,7 +124,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close">
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -206,8 +206,7 @@ const {
 
   document
     .getElementById(`${id}-modal-close`)
-    .addEventListener("click", () => closeModal(id))
-  
+    .addEventListener("click", () => closeModal(id));
 </script>
 
 <style>
