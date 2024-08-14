@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button id={`${id}-modal-close`} class="modal-close" onclick={`closeModal('${id}')`}>
+          <button id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -103,7 +103,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button class="modal-close">
             &times;
           </button>
         </header>
@@ -124,7 +124,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button class="modal-close">
             &times;
           </button>
         </header>
