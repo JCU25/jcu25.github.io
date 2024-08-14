@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button class="modal-close">
+          <button  class="modal-close">
             &times;
           </button>
         </header>
@@ -124,7 +124,7 @@ const {
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button id=`${id}-modal-close` class="modal-close" onclick={`closeModal('${id}')`}>
             &times;
           </button>
         </header>
@@ -185,7 +185,6 @@ const {
 <script define:vars={{ id }}>
   console.log(id);
   function openModal(id) {
-    console.log("in");
     document.getElementById(id).style.display = "block";
   }
 
@@ -207,7 +206,7 @@ const {
     .addEventListener("click", () => openModal(id));
 
   document
-    .getElementsByClassName("modal-close")
+    .getElementById(`${id}-modal-close`)
     .addEventListener("click", () => closeModal(id))
   
 </script>
