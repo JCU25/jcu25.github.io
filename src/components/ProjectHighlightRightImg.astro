@@ -26,7 +26,11 @@ const {
 } = Astro.props;
 ---
 
-<div onclick={`openModal('${id}')`} class="highlight-container">
+<div
+  id=`${id}-modal-button`
+  onclick={`openModal('${id}')`}
+  class="highlight-container"
+>
   <div class="flex horizontal proj-info-container">
     <div class="flex column proj-info">
       {
@@ -180,7 +184,32 @@ const {
 </div>
 
 <!-- <script type="text/javascript" src="../src/js/modal.js"></script> -->
-<script type="text/javascript" src="/src/src/js/modal.js"></script>
+<!-- <script type="text/javascript" src="/src/js/modal.js"></script> -->
+
+<script define:vars={{ id }}>
+  console.log(id);
+  function openModal(id) {
+    console.log('in');
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    var modals = document.getElementsByClassName("modal");
+    for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        modals[i].style.display = "none";
+      }
+    }
+  };
+
+  document
+    .getElementById(`${id}-modal-button`)
+    .addEventListener("click", openModal(id));
+</script>
 
 <style>
   h2 {
