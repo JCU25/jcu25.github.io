@@ -26,10 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<div
-  id=`${id}-modal-button`
-  class="highlight-container"
->
+<div id=`${id}-modal-button` class="highlight-container">
   <div class="flex horizontal proj-info-container">
     <div class="flex column proj-info">
       {
@@ -188,7 +185,7 @@ const {
 <script define:vars={{ id }}>
   console.log(id);
   function openModal(id) {
-    console.log('in');
+    console.log("in");
     document.getElementById(id).style.display = "block";
   }
 
@@ -207,7 +204,7 @@ const {
 
   document
     .getElementById(`${id}-modal-button`)
-    .addEventListener("click", openModal(id));
+    .addEventListener("click", () => openModal(id));
 </script>
 
 <style>
