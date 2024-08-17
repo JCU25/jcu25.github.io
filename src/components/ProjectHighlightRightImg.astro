@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<div onclick={`openModal('${id}')`} class="highlight-container">
+<div id=`${id}-modal-button` class="highlight-container">
   <div class="flex horizontal proj-info-container">
     <div class="flex column proj-info">
       {
@@ -82,7 +82,7 @@ const {
       proj_link == "" && (
         <header class="modal-header">
           <h1 class="modal-header">{title}</h1>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -98,12 +98,12 @@ const {
             <a target="_blank" href={proj_link}>
               <img
                 class="modal-link-icon git-icon"
-                src="/jcu25.github.io/assets/github-vector.svg"
+                src="/assets/github-vector.svg"
                 alt="Github Link"
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -119,12 +119,12 @@ const {
             <a target="_blank" href={proj_link}>
               <img
                 class="modal-link-icon redir-icon"
-                src="/jcu25.github.io/public/assets/open-link-icon.svg"
+                src="/assets/open-link-icon.svg"
                 alt="Project Link"
               />
             </a>
           </div>
-          <button class="modal-close" onclick={`closeModal('${id}')`}>
+          <button type="button" id={`${id}-modal-close`} class="modal-close">
             &times;
           </button>
         </header>
@@ -179,7 +179,37 @@ const {
   </div>
 </div>
 
-<script type="text/javascript" src="../src/js/modal.js"></script>
+<!-- <script type="text/javascript" src="../src/js/modal.js"></script> -->
+<!-- <script type="text/javascript" src="/src/js/modal.js"></script> -->
+
+<script define:vars={{ id }}>
+  console.log(id);
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    var modals = document.getElementsByClassName("modal");
+    for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        modals[i].style.display = "none";
+      }
+    }
+  };
+
+  document
+    .getElementById(`${id}-modal-button`)
+    .addEventListener("click", () => openModal(id));
+
+  document
+    .getElementById(`${id}-modal-close`)
+    .addEventListener("click", () => closeModal(id))
+  
+</script>
 
 <style>
   h2 {

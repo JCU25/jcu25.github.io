@@ -1,11 +1,9 @@
 function openModal(id) {
-    // console.log(id);
     document.getElementById(id).style.display = "block";
     ;
 }
 
 function closeModal(id) {
-    // console.log(id);
     document.getElementById(id).style.display = "none";
 }
 
