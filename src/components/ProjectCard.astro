@@ -23,22 +23,22 @@ const {
 <!-- <a href={project_link}> -->
 <div class="container">
   {
-    img_src === "/jcu25.github.io/assets/proj-discord-icon.png" && (
+    img_src === "/assets/proj-discord-icon.png" && (
       <a class="discord-img" href={project_link}>
         <img src={img_src} alt={project_name} class="discord-img" />
       </a>
     )
   }
   {
-    img_src === "/jcu25.github.io/assets/proj-machine-learning-icon.png" && (
+    img_src === "/assets/proj-machine-learning-icon.png" && (
       <a class="machine-learning-img" href={project_link}>
         <img src={img_src} alt={project_name} class="machine-learning-img" />
       </a>
     )
   }
   {
-    img_src !== "/jcu25.github.io/assets/proj-discord-icon.png" &&
-      img_src !== "/jcu25.github.io/assets/proj-machine-learning-icon.png" && (
+    img_src !== "/assets/proj-discord-icon.png" &&
+      img_src !== "/assets/proj-machine-learning-icon.png" && (
         <a href={project_link}>
           <img src={img_src} alt={project_name} class="proj-img" />
         </a>
