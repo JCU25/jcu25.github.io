@@ -55,14 +55,14 @@ const {
       </div>
 
       {
-        img_src === "/jcu25.github.io/assets/proj-discord-icon.png" && (
+        img_src === "/assets/proj-discord-icon.png" && (
           <a class="discord-img">
             <img src={img_src} alt={project_name} class="discord-img" />
           </a>
         )
       }
       {
-        img_src === "/jcu25.github.io/assets/proj-machine-learning-icon.png" && (
+        img_src === "/assets/proj-machine-learning-icon.png" && (
           <a class="machine-learning-img">
             <img
               src={img_src}
@@ -73,8 +73,8 @@ const {
         )
       }
       {
-        img_src !== "/jcu25.github.io/assets/proj-discord-icon.png" &&
-          img_src !== "/jcu25.github.io/assets/proj-machine-learning-icon.png" && (
+        img_src !== "/assets/proj-discord-icon.png" &&
+          img_src !== "/assets/proj-machine-learning-icon.png" && (
             <a>
               <img src={img_src} alt={project_name} class="proj-img" />
             </a>
@@ -158,18 +158,18 @@ const {
 
     <div class="modal-img-div">
       {
-        img_src === "/jcu25.github.io/public/assets/proj-discord-icon.png" && (
+        img_src === "/public/assets/proj-discord-icon.png" && (
           <img src={img_src} alt={project_name} class="modal-proj-icon" />
         )
       }
       {
-        img_src === "/jcu25.github.io/public/assets/proj-machine-learning-icon.png" && (
+        img_src === "/public/assets/proj-machine-learning-icon.png" && (
           <img src={img_src} alt={project_name} class="modal-proj-icon" />
         )
       }
       {
-        img_src !== "/jcu25.github.io/public/assets/proj-discord-icon.png" &&
-          img_src !== "/jcu25.github.io/assets/proj-machine-learning-icon.png" && (
+        img_src !== "/public/assets/proj-discord-icon.png" &&
+          img_src !== "/assets/proj-machine-learning-icon.png" && (
             <img class="modal-proj-img" src={img_src} alt={project_name} />
           )
       }
@@ -392,6 +392,7 @@ const {
 
   .machine-learning-img {
     height: 200px;
+    width: auto;
     margin: 10px auto;
   }
 
